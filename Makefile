@@ -34,3 +34,6 @@ build:
 		OUT=$$(basename $$f | sed -E "s/(.*).cpp/\1/"); \
 		$(CPP) -o $(bindir)$(test)/cpp/$$OUT $$f ; \
 	done
+
+clean:
+	rm -rf $(bindir)*
