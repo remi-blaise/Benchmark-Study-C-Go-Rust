@@ -5,6 +5,7 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
 	int S = 1000000000; // 1 GB
+	int tmp;
 	if (argc == 2)
 	{
 		S = atoi(argv[1]);
@@ -13,9 +14,10 @@ int main(int argc, char const *argv[])
 	S = S / sizeof(int);
 
 	int *p = (int *)malloc(S * sizeof(int));
+
 	for (int i = 0; i < S; i++)
 	{
-		p[i] = 42;
+		tmp = p[i];
 	}
 
 	free(p);

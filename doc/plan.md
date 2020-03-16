@@ -65,25 +65,17 @@ Metrics:
 - memory size
 - execution time
 
-### 2.1 Allocating 1GB
+### 2.1 Allocating and writing 1GB
 
 Args: 
 - `S = 1_000_000_000`: Size in byte
 
 Program: 
 1. Allocate a 1GB space on the heap.
-2. Do a random access to ensure compiler don't optimize by removing code.
-
-### 2.2 Writing 1GB
-
-Args: 
-- `S = 1_000_000_000`: Size in byte
-
-Program:
-1. Allocate a 1GB space on the heap.
 2. Write 1GB with value 42.
+3. Free the space.
 
-### 2.3 Read 1GB
+### 2.2 Reading 1GB
 
 Args: 
 - `S = 1_000_000_000`: Size in byte
@@ -92,26 +84,7 @@ Program:
 1. Allocate 1GB on the heap.
 2. Read 1GB just by looping over and consecutively storing each of the values into a one byte variable.
 
-### 2.4 Free 1GB
-
-Args: 
-- `S = 1_000_000_000`: Size in byte
-
-Program: 
-1. Allocate a 1GB space on the heap.
-2. Do a random access to ensure compiler don't optimize by removing code.
-3. Free the space.
-
-### 2.4 Passing to a function
-
-Args: 
-- `S = 1_000_000_000`: Size in byte
-
-Program:
-1. Allocate 1GB on the **stack**.
-2. Pass by copy to a function doing a random access.
-
-### 2.5 Allocating 1000*1MB
+### 2.3 Allocating 1000*1MB
 
 Args: 
 - `S = 1_000_000`: Size in byte
