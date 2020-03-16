@@ -3,27 +3,27 @@
 using namespace std;
 
 // Recursion function
-int rec(int n, int N)
+int rec(unsigned long long int n)
 {
-	if (N <= 0)
+	if (n <= 0)
 	{
 		return n;
 	}
 
-	return rec(n + 1, N - 1);
+	return rec(n - 1);
 }
 
 int main(int argc, char const *argv[])
 {
-	int N = 1000;
+	unsigned long long int n = 1000;
 	if (argc == 2)
 	{
-		N = atoi(argv[1]);
+		n = atoi(argv[1]);
 	}
 
-	int n = 0;
+	n = rec(n);
 
-	rec(n, N);
+	cout << n;
 
 	return 0;
 }
