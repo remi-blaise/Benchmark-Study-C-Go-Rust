@@ -1,6 +1,6 @@
 # Installation
 
-Run `make install` to install Rust and Go
+Run `make deps_install` to install Rust and Go
 
 # Build
 

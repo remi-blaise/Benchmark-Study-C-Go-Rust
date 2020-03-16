@@ -8,7 +8,7 @@ CPP=g++ -Wall
 GREEN=\e[1m\e[32m
 RESET=\e[0m
 
-install:
+deps_install:
 	@echo "\n$(GREEN)Installing Rust...$(RESET)"
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --profile minimal -y
 
@@ -19,6 +19,9 @@ install:
 	@echo "export PATH=\$$PATH:\$$HOME/go/bin" >> ~/.profile
 
 	@echo "\n$(GREEN)Done!$(RESET)"
+
+listall:
+	@ls -1 $(benchdir)
 
 build:
 	mkdir -p $(bindir)$(test)/rust
