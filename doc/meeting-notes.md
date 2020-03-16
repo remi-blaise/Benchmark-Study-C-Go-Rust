@@ -1,4 +1,4 @@
-# Meeting 2
+# Meeting 2 (03/02)
 
 Notes of the meeting:
 sockets, Iostat, trie trees used for databases, threads, coroutines, processes, asynchronous, matrix ijk algo, crypto focus on hash fn, serialization just one lib, cereal or msgpack, timers precision and time read
@@ -14,7 +14,7 @@ We need to be comprehensive
 
 Talk about memory safety features without forgetting it is for a high perf lab
 
-# Meeting 3
+# Meeting 3 (03/09)
 
 We wrote part of this doc.
 
@@ -22,7 +22,23 @@ For next week:
 - [ ] finish this doc
 - [x] merge points 3 and 5
 - [x] swap 4 and 6
-- [ ] implement 1 & 2
-- [ ] implement 7 Iteration vs recursion
-- [ ] do as much as 3 Data structures and 5 Sorting as possible
-- [ ] look what we need for 6 Matrix
+- [x] implement 1 & 2
+- [x] implement 7 Iteration vs recursion
+
+# Meeting 4 (03/16)
+
+Next week (03/23):
+
+- [ ] Compiler optimization
+- [ ] Add new test for benchmark iteration: Fibonacci (compare compiler optimization)
+- [ ] Do as much as Data structures and Sorting as possible (4)
+- [ ] Implement string benchmark (7)
+- [ ] Look what we need for Matrix (5)
+- [ ] Set up measurement commands
+- [ ] Reading about concurrency
+
+In 2 weeks (03/30):
+
+- [ ] Concurrency (6)
+- [ ] Hashing (9)
+- [ ] Complex numbers (12)

@@ -1,8 +1,8 @@
 # Benchmarks
 
-1. Hello World: binary and memory size
-2. Memory management: allocating memory, passing to a function, writing, reading, delete
-3. Iteration vs recursion
+1. Hello World: binary and memory size **(DONE)**
+2. Memory management: allocating memory, passing to a function, writing, reading, delete **(DONE)**
+3. Iteration vs recursion **(WIP)**
 4. Data structure operations: creation, insert, random access, delete, lifecycle on vectors (arrays), trees, graphs, stacks, heaps, queues
 and Standard sorting algorithms
 5. Matrix operations: creation, multiplication (stock, ijk, transpose) → FLOPS
