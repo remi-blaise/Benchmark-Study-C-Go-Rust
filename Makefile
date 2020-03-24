@@ -3,7 +3,7 @@ bindir = ./bin/
 
 RUST=rustc
 GO=go build
-CPP=g++ -Wall
+CPP=g++ -O2 -Wall
 
 GREEN=\e[1m\e[32m
 RESET=\e[0m
