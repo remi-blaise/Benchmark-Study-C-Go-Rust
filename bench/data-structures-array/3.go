@@ -1,7 +1,7 @@
 package main
 
 import (
-	"crypto/rand"
+	"math/rand"
 	"os"
 	"sort"
 	"strconv"
