@@ -38,8 +38,11 @@ Next week (03/23):
 - [ ] Set up measurement commands
 - [ ] Reading about concurrency
 
-In 2 weeks (03/30):
+# Meeting 5 (03/24)
 
+Next week (03/30):
+
+- [ ] Matrix (5)
 - [ ] Concurrency (6)
 - [ ] Hashing (9)
 - [ ] Complex numbers (12)

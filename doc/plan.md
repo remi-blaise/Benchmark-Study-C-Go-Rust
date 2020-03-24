@@ -2,12 +2,11 @@
 
 1. Hello World: binary and memory size **(DONE)**
 2. Memory management: allocating memory, passing to a function, writing, reading, delete **(DONE)**
-3. Iteration vs recursion **(WIP)**
-4. Data structure operations: creation, insert, random access, delete, lifecycle on vectors (arrays), trees, graphs, stacks, heaps, queues
-and Standard sorting algorithms
+3. Iteration vs recursion **(DONE)**
+4. Data structure operations: creation, insert, random access, delete, lifecycle on vectors (arrays), trees, graphs, stacks, heaps, queues and Standard sorting algorithms  **(WIP)**
 5. Matrix operations: creation, multiplication (stock, ijk, transpose) → FLOPS
 6. Concurrency mechanisms: creation, execution, suppression of a thread, process, coroutine, goroutine; mutual exclusion mechanisms
-7. String: split function and binary representation (ASCII, UTF-8)
+7. String: split function and binary representation (ASCII, UTF-8) **(WIP)**
 8. Data serialization
     - Rust & Go ?
     - C++: cereal, message pack, protobuf, …
@@ -213,7 +212,7 @@ Program:
 1. Create an empty
 2. Do N times: Insert a random number
 
-#### 4.2.2 Random access
+#### 4.2.2 Search
 
 Args:
 - `S = 1_000_000`: Size of the Binary tree
@@ -221,7 +220,7 @@ Args:
 
 Program:
 1. Create of size S with random values
-2. Do N times: Select a random location and read (store in a one byte variable)
+2. Do N times: Select a random value and search for it in the BST
 
 #### 4.2.3 Deletion
 
