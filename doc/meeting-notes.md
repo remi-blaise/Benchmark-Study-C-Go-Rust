@@ -32,9 +32,9 @@ Next week (03/23):
 - [x] Compiler optimization
     - Go: https://github.com/golang/go/wiki/CompilerOptimizations
 - [x] Add new test for benchmark iteration: Fibonacci (compare compiler optimization)
-- [ ] Do as much as Data structures and Sorting as possible (4)
-- [ ] Implement string benchmark (7)
-- [ ] Look what we need for Matrix (5)
+- [x] Do as much as Data structures and Sorting as possible (4)
+- [x] Implement string benchmark (7)
+- [x] Look what we need for Matrix (5)
 - [ ] Set up measurement commands
 - [ ] Reading about concurrency
 
