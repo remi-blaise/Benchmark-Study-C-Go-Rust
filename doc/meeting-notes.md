@@ -43,6 +43,9 @@ Next week (03/23):
 Next week (03/30):
 
 - [x] Matrix (5)
-- [ ] Concurrency (6)
+- [x] Concurrency (6):
+    - https://www.geeksforgeeks.org/golang-goroutine-vs-thread/
+    - https://medium.com/a-journey-with-go/go-goroutine-os-thread-and-cpu-management-2f5a5eaf518a
+    - https://golangbot.com/goroutines/
 - [ ] Hashing (9)
 - [x] Complex numbers (12)
