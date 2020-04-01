@@ -42,7 +42,7 @@ Next week (03/23):
 
 Next week (03/30):
 
-- [ ] Matrix (5)
+- [x] Matrix (5)
 - [ ] Concurrency (6)
 - [ ] Hashing (9)
-- [ ] Complex numbers (12)
+- [x] Complex numbers (12)
