@@ -4,16 +4,16 @@
 2. Memory management: allocating memory, passing to a function, writing, reading, delete **(DONE)**
 3. Iteration vs recursion **(DONE)**
 4. Data structure operations: creation, insert, random access, delete, lifecycle on vectors (arrays), trees, graphs, stacks, heaps, queues and Standard sorting algorithms  **(WIP)**
-5. Matrix operations: creation, multiplication (stock, ijk, transpose) → FLOPS
-6. Concurrency mechanisms: creation, execution, suppression of a thread, process, coroutine, goroutine; mutual exclusion mechanisms
+5. Matrix operations: creation, multiplication (stock, ijk, transpose) → FLOPS **(WIP)**
+6. Concurrency mechanisms: creation, execution, suppression of a thread, process, coroutine, goroutine; mutual exclusion mechanisms **(WIP)**
 7. String: split function and binary representation (ASCII, UTF-8) **(WIP)**
 8. Data serialization
     - Rust & Go ?
     - C++: cereal, message pack, protobuf, …
-9. Hashing
+9. Hashing **(WIP)**
 10. Sockets: ping pong
 11. Timers precision and time read
-12. Computation: complex numbers
+12. Computation: complex numbers **(WIP)**
 
 # Measure Tools
 

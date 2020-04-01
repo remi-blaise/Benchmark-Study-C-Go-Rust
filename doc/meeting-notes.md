@@ -56,3 +56,13 @@ What Remi did this week on Rust:
 - Compiler optimization: https://doc.rust-lang.org/cargo/reference/profiles.html#release
 - Memory (2)
 - Fibonacci (3)
+
+Next week (04/06):
+
+- [ ] Deeper research on concurrency in Go and Rust (threads, processes)
+- [ ] Search about using C library in Go
+- [ ] Rust: Benchmarks 4, 5, 6, 7, 9 and 12
+- [ ] C++/Go: Data serialization (8)
+- [ ] C++/Go: Sockets (10)
+- [ ] C++/Go: Timers (11)
+- [ ] Set up measurement commands
