@@ -43,14 +43,20 @@ This document describes benchmarks to realize.
 
 To have a predictable (once-seeded) identical source of random numbers for all test cases, a random suite of number will be pregenerated and stored in a file. Test cases will use this file as the random source.
 
+## Compiler optimization flags
+
+We wish to use the common optimization options that developers use for all languages in order to get fair comparisons of what our tests would imply in real-world scripts.
+
+For Rust, we are using the very same flags as the `release` profile does: https://doc.rust-lang.org/cargo/reference/profiles.html#release
+
 ## 1 Hello World
 
 Motivation: See the overhead of the simplest program.
 
-Program: 
+Program:
 1. Print "Hello World".
 
-Metrics: 
+Metrics:
 - binary size
 - memory size
 - compilation time
@@ -66,26 +72,26 @@ Metrics:
 
 ### 2.1 Allocating and writing 1GB
 
-Args: 
+Args:
 - `S = 1_000_000_000`: Size in byte
 
-Program: 
+Program:
 1. Allocate a 1GB space on the heap.
 2. Write 1GB with value 42.
 3. Free the space.
 
 ### 2.2 Reading 1GB
 
-Args: 
+Args:
 - `S = 1_000_000_000`: Size in byte
 
-Program: 
+Program:
 1. Allocate 1GB on the heap.
 2. Read 1GB just by looping over and consecutively storing each of the values into a one byte variable.
 
-### 2.3 Allocating 1000*1MB
+### 2.3 Allocating 1000\*1MB
 
-Args: 
+Args:
 - `S = 1_000_000`: Size in byte
 - `N = 1000`: Iterations
 
@@ -134,7 +140,7 @@ Program: Sort an array that is reverse sorted
 Args:
  - `S = 1_000_000` Size of the array
 
-Program: 
+Program:
 - Generate a random array
 - Sort the array
 
@@ -191,10 +197,10 @@ Program: Sort an array that is reverse sorted
 Args:
  - `S = 1_000_000` Size of the array
 
-Prerequisite: 
+Prerequisite:
 - Generate an array filled with random integers in a csv file
 
-Program: 
+Program:
 - Read the file (name as first arg)
 - Sort the array
 
