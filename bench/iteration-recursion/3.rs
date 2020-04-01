@@ -5,14 +5,18 @@ fn main() {
     let n: usize = if args.len() > 1 {
         args[1].parse().unwrap()
     } else {
-        1000_000_000
-    } / 4;
+        40
+    };
 
-    println!("{}", n);
-
-    let mut v = Vec::with_capacity(n);
+    let mut x: i32 = 0;
+    let mut y: i32 = 1;
+    let mut z: i32;
 
     for _ in 0..n {
-        v.push(42);
+        z = x + y;
+        x = y;
+        y = z;
     }
+
+    println!("{}\n", x);
 }

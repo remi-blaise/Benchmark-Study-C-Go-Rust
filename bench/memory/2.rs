@@ -15,4 +15,10 @@ fn main() {
     for _ in 0..n {
         v.push(42);
     }
+
+    let mut _tmp: i32 = 0;
+
+    for i in 0..n {
+        _tmp = v[i];
+    }
 }

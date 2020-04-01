@@ -4,7 +4,7 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-	unsigned int n = 100;
+	int n = 40;
 	if (argc == 2)
 	{
 		n = atoi(argv[1]);

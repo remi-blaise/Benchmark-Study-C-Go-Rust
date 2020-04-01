@@ -1,9 +1,15 @@
 benchdir = ./bench/
 bindir = ./bin/
 
-RUST=rustc
+RUST_OPTI=-C opt-level=3 -C debuginfo=0 -C debug-assertions=off -C overflow-checks=off -C lto=off -C panic=unwind -C incremental=off -C codegen-units=16
+CPP_OPTI=-O2
+
+RUST_DEBUG=-C opt-level=3 -C debuginfo=2 -C debug-assertions=on -C overflow-checks=on -C panic=unwind  -C incremental=on -C codegen-units=16
+CPP_DEBUG=-Wall
+
+RUST=rustc $(RUST_OPTI)
 GO=go build
-CPP=g++ -O2 -Wall -std=c++11 -pthread
+CPP=g++ $(CPP_OPTI) $(CPP_DEBUG) -std=c++11 -pthread
 
 GREEN=\e[1m\e[32m
 RESET=\e[0m

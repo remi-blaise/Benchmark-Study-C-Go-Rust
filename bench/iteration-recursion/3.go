@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	var n = 100
+	var n = 40
 	var args = os.Args[1:]
 	if len(args) >= 1 {
 		n, _ = strconv.Atoi(args[0])

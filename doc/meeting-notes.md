@@ -49,3 +49,10 @@ Next week (03/30):
     - https://golangbot.com/goroutines/
 - [x] Hashing (9)
 - [x] Complex numbers (12)
+
+# Meeting 6 (04/01)
+
+What Remi did this week on Rust:
+- Compiler optimization: https://doc.rust-lang.org/cargo/reference/profiles.html#release
+- Memory (2)
+- Fibonacci (3)
