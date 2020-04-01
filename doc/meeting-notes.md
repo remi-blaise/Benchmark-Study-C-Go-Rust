@@ -47,5 +47,5 @@ Next week (03/30):
     - https://www.geeksforgeeks.org/golang-goroutine-vs-thread/
     - https://medium.com/a-journey-with-go/go-goroutine-os-thread-and-cpu-management-2f5a5eaf518a
     - https://golangbot.com/goroutines/
-- [ ] Hashing (9)
+- [x] Hashing (9)
 - [x] Complex numbers (12)
