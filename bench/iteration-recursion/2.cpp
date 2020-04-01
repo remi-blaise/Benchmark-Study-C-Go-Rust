@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
 
 	n = rec(n);
 
-	cout << n;
+	cout << n << endl;
 
 	return 0;
 }

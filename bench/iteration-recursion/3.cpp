@@ -17,7 +17,7 @@ int main(int argc, char const *argv[])
 		y = z;
 	}
 
-	cout << x;
+	cout << x << endl;
 
 	return 0;
 }

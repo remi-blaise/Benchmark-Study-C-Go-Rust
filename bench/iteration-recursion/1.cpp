@@ -15,7 +15,7 @@ int main(int argc, char const *argv[])
 		n--;
 	}
 
-	cout << n;
+	cout << n << endl;
 
 	return 0;
 }
