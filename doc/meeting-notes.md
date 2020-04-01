@@ -11,7 +11,6 @@ For next time: write spec of the project with system environment, program we wan
 We can write our programs or look for already made benchmarks
 We need to be comprehensive
 
-
 Talk about memory safety features without forgetting it is for a high perf lab
 
 # Meeting 3 (03/09)
@@ -58,7 +57,6 @@ What Remi did this week on Rust:
 - Fibonacci (3)
 
 Next week (04/06):
-
 - [ ] Deeper research on concurrency in Go and Rust (threads, processes)
 - [ ] Search about using C library in Go
 - [ ] Rust: Benchmarks 4, 5, 6, 7, 9 and 12
@@ -66,3 +64,8 @@ Next week (04/06):
 - [ ] C++/Go: Sockets (10)
 - [ ] C++/Go: Timers (11)
 - [ ] Set up measurement commands
+
+Roles:
+[ ] Remi: progress on implementation, at the least week 4
+[ ] Florentin: finish implementation
+[ ] Florentin: Setting up measurement scripts

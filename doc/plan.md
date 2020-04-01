@@ -330,6 +330,8 @@ Program: Multiply a matrix of size M\*N and a matrix of size N\*M with a for loo
 
 ## 6. Concurrency mechanisms
 
+Compare threads, processes and goroutines
+
 ## 7. Strings
 ## 8. Data serialization
     - Rust & Go ?
@@ -356,3 +358,9 @@ Program: Perform basic operations on complex numbers:
 
 Metrics:
  - ?
+
+## 13. Using C in Rust, Go
+
+Select 3 C libraries.
+Use them in Rust, Go.
+Compare with C
