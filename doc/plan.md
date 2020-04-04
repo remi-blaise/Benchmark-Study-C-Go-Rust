@@ -331,12 +331,25 @@ Program: Multiply a matrix of size M\*N and a matrix of size N\*M with a for loo
 ## 6. Concurrency mechanisms
 
 Compare threads, processes and goroutines
+1. Generate N=10_000 threads, each thread increment a var
+2. Idem mais on lock la variable
+3. Generate N=10_000 processes, each process increment a var
+4. Idem mais on lock la variable
 
 ## 7. Strings
+
+1. Split on a 1GB lorem ipsum
+2. Document on representation of strings
+
 ## 8. Data serialization
     - Rust & Go ?
     - C++: cereal, message pack, protobuf, …
+
 ## 9. Hashing
+
+0. Inserer 1_000_000 d'elements dans une hashmap
+1. SHA1 100 MB
+2. SHA512 de 1000 passwords pregenerated in Bash with `pwgen`
 
 ## 10. Sockets: ping pong
 
