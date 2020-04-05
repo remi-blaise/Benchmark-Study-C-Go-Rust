@@ -61,7 +61,7 @@ Next week (04/06):
 - [ ] Search about using C library in Go
 - [ ] Rust: Benchmarks 4, 5, 6, 7, 9 and 12
 - [ ] C++/Go: Data serialization (8)
-- [ ] C++/Go: Sockets (10)
+- [x] C++/Go: Sockets (10)
 - [ ] C++/Go: Timers (11)
 - [ ] Set up measurement commands
 
