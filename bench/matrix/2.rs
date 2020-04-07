@@ -14,8 +14,8 @@ fn main() {
         1000
     };
 
-    let mat1: Matrix<i32> = Matrix::new(m, n);
-    let mat2: Matrix<i32> = Matrix::new(n, m);
+    let mut mat1: Matrix<i32> = Matrix::new(m, n);
+    let mut mat2: Matrix<i32> = Matrix::new(n, m);
 
     for i in 0..m {
         for j in 0..n {
@@ -24,5 +24,5 @@ fn main() {
         }
     };
 
-    mat1 * mat2
+    let _ = mat1 * mat2;
 }

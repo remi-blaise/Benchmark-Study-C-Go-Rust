@@ -75,3 +75,11 @@ path = "bench/data-structures-bst/2.rs"
 [[bin]]
 name = "matrix-1"
 path = "bench/matrix/1.rs"
+
+[[bin]]
+name = "matrix-2"
+path = "bench/matrix/2.rs"
+
+[[bin]]
+name = "string-1"
+path = "bench/string/1.rs"
