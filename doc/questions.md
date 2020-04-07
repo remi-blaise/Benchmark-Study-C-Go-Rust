@@ -23,3 +23,6 @@ to retrieve reserved memory, shared memory, %cpu and %ram
 New comments:
 3 Data structures
 - Rust can't sort arrays
+
+BST 2.go => Remove return a non-captured value?!
+In Rust, use of B-Tree

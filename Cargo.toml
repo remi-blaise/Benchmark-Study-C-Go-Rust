@@ -62,3 +62,8 @@ path = "bench/data-structures-vector/5.rs"
 [[bin]]
 name = "data-structures-vector-6"
 path = "bench/data-structures-vector/6.rs"
+
+
+[[bin]]
+name = "data-structures-bst-1"
+path = "bench/data-structures-bst/1.rs"
