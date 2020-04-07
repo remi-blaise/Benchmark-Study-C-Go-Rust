@@ -7,6 +7,7 @@ edition = "2018"
 [dependencies]
 rand = "0.7.3"
 simple-matrix = "0.1"
+num = "0.2.1"
 
 [[bin]]
 name = "hello-world-1"
@@ -83,3 +84,23 @@ path = "bench/matrix/2.rs"
 [[bin]]
 name = "string-1"
 path = "bench/string/1.rs"
+
+[[bin]]
+name = "complex-1"
+path = "bench/complex/1.rs"
+
+[[bin]]
+name = "complex-2"
+path = "bench/complex/2.rs"
+
+[[bin]]
+name = "datacomplexvector-3"
+path = "bench/complex/3.rs"
+
+[[bin]]
+name = "datacomplexvector-4"
+path = "bench/complex/4.rs"
+
+[[bin]]
+name = "complex-5"
+path = "bench/complex/5.rs"
