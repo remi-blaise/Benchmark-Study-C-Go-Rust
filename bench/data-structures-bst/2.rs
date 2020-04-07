@@ -21,6 +21,6 @@ fn main() {
     }
 
     for _ in 0..n {
-        bt.remove(rand::random::<i32>());
+        bt.remove(&rand::random::<i32>());
     }
 }

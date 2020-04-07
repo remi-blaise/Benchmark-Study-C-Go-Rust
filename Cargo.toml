@@ -6,6 +6,7 @@ edition = "2018"
 
 [dependencies]
 rand = "0.7.3"
+simple-matrix = "0.1"
 
 [[bin]]
 name = "hello-world-1"
@@ -63,7 +64,14 @@ path = "bench/data-structures-vector/5.rs"
 name = "data-structures-vector-6"
 path = "bench/data-structures-vector/6.rs"
 
-
 [[bin]]
 name = "data-structures-bst-1"
 path = "bench/data-structures-bst/1.rs"
+
+[[bin]]
+name = "data-structures-bst-2"
+path = "bench/data-structures-bst/2.rs"
+
+[[bin]]
+name = "matrix-1"
+path = "bench/matrix/1.rs"
