@@ -16,3 +16,10 @@ Measurements:
 Run `top -b > measures` during the execution, then
 `cat measures | grep "chrome" | perl -pe 's/^\s+//' | tr -s " " | cut -f 6,7,9,10 -d " "`
 to retrieve reserved memory, shared memory, %cpu and %ram
+
+
+-------------------------
+
+New comments:
+3 Data structures
+- Rust can't sort arrays

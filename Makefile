@@ -1,13 +1,13 @@
 benchdir = ./bench/
 bindir = ./bin/
 
-RUST_OPTI=-C opt-level=3 -C debuginfo=0 -C debug-assertions=off -C overflow-checks=off -C lto=off -C panic=unwind -C incremental=off -C codegen-units=16
+RUST_OPTI=--release
 CPP_OPTI=-O2
 
-RUST_DEBUG=-C opt-level=3 -C debuginfo=2 -C debug-assertions=on -C overflow-checks=on -C panic=unwind  -C incremental=on -C codegen-units=16
+RUST_DEBUG=
 CPP_DEBUG=-Wall
 
-RUST=rustc $(RUST_OPTI)
+RUST=cargo build $(RUST_OPTI)
 GO=go build
 CPP=g++ $(CPP_OPTI) $(CPP_DEBUG) -std=c++11 -pthread
 
@@ -30,9 +30,12 @@ listall:
 	@ls -1 $(benchdir)
 
 build:
+	cargo build --release
 	mkdir -p $(bindir)$(test)/rust
-	for f in $(wildcard $(benchdir)$(test)/*.rs) ; do \
-		$(RUST) --out-dir $(bindir)$(test)/rust $$f ; \
+	rm -f $(bindir)$(test)/rust/*
+	for f in $(wildcard $(benchdir)$(test)/*.rs); do \
+		filename=`echo $$f | sed 's:.*/::' | sed 's:.rs::'`; \
+		cp target/release/$(test)-$$filename $(bindir)$(test)/rust/$$filename; \
 	done
 	@echo "$(GREEN)Built Rust!$(RESET)\n"
 	mkdir -p $(bindir)$(test)/go

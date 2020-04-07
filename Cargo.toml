@@ -1,0 +1,64 @@
+[package]
+name = "bench"
+version = "0.1.0"
+authors = ["Rémi Blaise <pro@remi-blaise.com>"]
+edition = "2018"
+
+[dependencies]
+rand = "0.7.3"
+
+[[bin]]
+name = "hello-world-1"
+path = "bench/hello-world/1.rs"
+
+[[bin]]
+name = "memory-1"
+path = "bench/memory/1.rs"
+
+[[bin]]
+name = "memory-2"
+path = "bench/memory/2.rs"
+
+[[bin]]
+name = "memory-3"
+path = "bench/memory/3.rs"
+
+[[bin]]
+name = "iteration-recursion-1"
+path = "bench/iteration-recursion/1.rs"
+
+[[bin]]
+name = "iteration-recursion-2"
+path = "bench/iteration-recursion/2.rs"
+
+[[bin]]
+name = "iteration-recursion-3"
+path = "bench/iteration-recursion/3.rs"
+
+[[bin]]
+name = "iteration-recursion-4"
+path = "bench/iteration-recursion/4.rs"
+
+[[bin]]
+name = "data-structures-vector-1"
+path = "bench/data-structures-vector/1.rs"
+
+[[bin]]
+name = "data-structures-vector-2"
+path = "bench/data-structures-vector/2.rs"
+
+[[bin]]
+name = "data-structures-vector-3"
+path = "bench/data-structures-vector/3.rs"
+
+[[bin]]
+name = "data-structures-vector-4"
+path = "bench/data-structures-vector/4.rs"
+
+[[bin]]
+name = "data-structures-vector-5"
+path = "bench/data-structures-vector/5.rs"
+
+[[bin]]
+name = "data-structures-vector-6"
+path = "bench/data-structures-vector/6.rs"
