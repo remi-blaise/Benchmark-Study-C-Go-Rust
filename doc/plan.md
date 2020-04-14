@@ -11,7 +11,7 @@
     - Rust & Go ?
     - C++: cereal, message pack, protobuf, …
 9. Hashing **(WIP)**
-10. Sockets: ping pong
+10. Sockets: ping pong **(WIP)**
 11. Timers precision and time read
 12. Computation: complex numbers **(WIP)**
 

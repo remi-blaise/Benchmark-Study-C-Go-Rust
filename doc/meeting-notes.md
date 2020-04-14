@@ -57,15 +57,23 @@ What Remi did this week on Rust:
 - Fibonacci (3)
 
 Next week (04/06):
-- [ ] Deeper research on concurrency in Go and Rust (threads, processes)
-- [ ] Search about using C library in Go
+
+- [x] Deeper research on concurrency in Go and Rust (threads, processes)
+    - https://yourbasic.org/golang/goroutines-explained/
+- [x] Search about using C library in Go
+    - https://golang.org/cmd/cgo/
 - [ ] Rust: Benchmarks 4, 5, 6, 7, 9 and 12
 - [ ] C++/Go: Data serialization (8)
 - [x] C++/Go: Sockets (10)
 - [ ] C++/Go: Timers (11)
-- [ ] Set up measurement commands
+    - https://golang.org/pkg/time/
+- [x] Set up measurement commands
 
-Roles:
-[ ] Remi: progress on implementation, at the least week 4
-[ ] Florentin: finish implementation
-[ ] Florentin: Setting up measurement scripts
+# Meeting 7 (04/07)
+
+Next week (04/13):
+
+- [ ] Rust only: Benchmarks 6, 9 and 10
+- [ ] Data serialization (8)
+- [ ] Timers (11)
+- [ ] Using C libraries (13)
