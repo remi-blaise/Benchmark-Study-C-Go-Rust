@@ -16,15 +16,15 @@ Measurements:
 Run `top -b > measures` during the execution, then
 `cat measures | grep "chrome" | perl -pe 's/^\s+//' | tr -s " " | cut -f 6,7,9,10 -d " "`
 to retrieve reserved memory, shared memory, %cpu and %ram
-
+-> sleep for 2 secondes before and after
 
 -------------------------
 
 New comments:
 3 Data structures
-- Rust can't sort arrays
+- Rust can't sort arrays => use the C sort, optionnal
 
 BST 2.go => Remove return a non-captured value?!
 In Rust, use of B-Tree
 
-Matrices?
+Matrices? => just multiplication is fine optional(apples to apples)

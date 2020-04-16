@@ -8,6 +8,7 @@ edition = "2018"
 rand = "0.7.3"
 simple-matrix = "0.1"
 num = "0.2.1"
+rust-crypto = "0.2.36"
 
 [[bin]]
 name = "hello-world-1"
@@ -104,3 +105,15 @@ path = "bench/complex/4.rs"
 [[bin]]
 name = "complex-5"
 path = "bench/complex/5.rs"
+
+[[bin]]
+name = "hashing-1"
+path = "bench/hashing/1.rs"
+
+[[bin]]
+name = "hashing-2"
+path = "bench/hashing/2.rs"
+
+[[bin]]
+name = "hashing-3"
+path = "bench/hashing/3.rs"

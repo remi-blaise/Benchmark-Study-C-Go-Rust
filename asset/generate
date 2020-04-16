@@ -1,0 +1,4 @@
+#!/bin/bash
+
+dd if=/dev/urandom of=asset/random100mb bs=1024 count=102400
+pwgen -N 1000 > asset/1000000passwords
