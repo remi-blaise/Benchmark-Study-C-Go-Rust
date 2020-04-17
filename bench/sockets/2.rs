@@ -11,12 +11,14 @@ fn main() {
         100
     };
 
-    let mut stream = TcpStream::connect("127.0.0.1:8080").unwrap();
+    let stream = TcpStream::connect("127.0.0.1:8080").unwrap();
+    let mut buffered_stream = BufReader::new(&stream);
+    let mut line;
 
     for _ in 0..n {
-        stream.write_all(b"Hello from client\n").unwrap();
-        let mut line = String::new();
-        BufReader::new(&stream).read_line(&mut line).unwrap();
+        (&stream).write_all(b"Hello from client\n").unwrap();
+        line = String::new();
+        buffered_stream.read_line(&mut line).unwrap();
         print!("Reply: {}", line);
     }
 }
