@@ -131,3 +131,11 @@ path = "bench/concurrency/2.rs"
 [[bin]]
 name = "concurrency-3"
 path = "bench/concurrency/3.rs"
+
+[[bin]]
+name = "sockets-1"
+path = "bench/sockets/1.rs"
+
+[[bin]]
+name = "sockets-2"
+path = "bench/sockets/2.rs"
