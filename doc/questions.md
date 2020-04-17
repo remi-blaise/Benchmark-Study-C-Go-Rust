@@ -28,3 +28,7 @@ BST 2.go => Remove return a non-captured value?!
 In Rust, use of B-Tree
 
 Matrices? => just multiplication is fine optional(apples to apples)
+
+-------------------------
+
+Attention : concurrency/2.cpp creation de threads exponentiels

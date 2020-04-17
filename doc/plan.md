@@ -344,6 +344,11 @@ Compare threads, processes and goroutines
 ## 8. Data serialization
     - Rust & Go ?
     - C++: cereal, message pack, protobuf, …
+For each test case, on serialize et deserialize X = 10000 fois
+1. Map<{ i32, f32, string }> de 10000 objets
+2. same en JSON
+2. same en XML
+4. La liste schema.org que en JSON
 
 ## 9. Hashing
 
@@ -359,6 +364,15 @@ Metrics:
  - ?
 
 ## 11. Timers precision and time read
+
+Measure time in ns
+
+start = time()
+while time() < start + 1min {
+    n++
+}
+print(n)
+
 ## 12. Computation: complex numbers
 
 Motivation: Compare Go's standard complex type with complex numbers implementations in Rust and C++

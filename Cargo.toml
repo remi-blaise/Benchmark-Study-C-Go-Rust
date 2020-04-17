@@ -9,6 +9,8 @@ rand = "0.7.3"
 simple-matrix = "0.1"
 num = "0.2.1"
 rust-crypto = "0.2.36"
+nix = "0.17.0"
+shared_memory = "0.10.0"
 
 [[bin]]
 name = "hello-world-1"
@@ -117,3 +119,15 @@ path = "bench/hashing/2.rs"
 [[bin]]
 name = "hashing-3"
 path = "bench/hashing/3.rs"
+
+[[bin]]
+name = "concurrency-1"
+path = "bench/concurrency/1.rs"
+
+[[bin]]
+name = "concurrency-2"
+path = "bench/concurrency/2.rs"
+
+[[bin]]
+name = "concurrency-3"
+path = "bench/concurrency/3.rs"
