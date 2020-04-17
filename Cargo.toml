@@ -11,6 +11,10 @@ num = "0.2.1"
 rust-crypto = "0.2.36"
 nix = "0.17.0"
 shared_memory = "0.10.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.51"
+bincode = "1.2.1"
+quick-xml = { version = "0.18.1", features = [ "serialize" ] }
 
 [[bin]]
 name = "hello-world-1"
@@ -143,3 +147,15 @@ path = "bench/sockets/2.rs"
 [[bin]]
 name = "timers-1"
 path = "bench/timers/1.rs"
+
+[[bin]]
+name = "serialization-1"
+path = "bench/serialization/1.rs"
+
+[[bin]]
+name = "serialization-2"
+path = "bench/serialization/2.rs"
+
+[[bin]]
+name = "serialization-3"
+path = "bench/serialization/3.rs"

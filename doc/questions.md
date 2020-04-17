@@ -32,3 +32,5 @@ Matrices? => just multiplication is fine optional(apples to apples)
 -------------------------
 
 Attention : concurrency/2.cpp creation de threads exponentiels
+Attention : serialization/1.go int is out of range
+serialization 1,2,3 => on avait pas dit une map de 1000 elements ?

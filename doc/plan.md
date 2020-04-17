@@ -350,6 +350,8 @@ For each test case, on serialize et deserialize X = 10000 fois
 2. same en XML
 4. La liste schema.org que en JSON
 
+Perf for Rust: https://github.com/serde-rs/json#performance
+
 ## 9. Hashing
 
 0. Inserer 1_000_000 d'elements dans une hashmap
