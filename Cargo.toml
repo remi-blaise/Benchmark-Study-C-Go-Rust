@@ -159,3 +159,7 @@ path = "bench/serialization/2.rs"
 [[bin]]
 name = "serialization-3"
 path = "bench/serialization/3.rs"
+
+[[bin]]
+name = "serialization-4"
+path = "bench/serialization/4.rs"
