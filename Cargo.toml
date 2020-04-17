@@ -139,3 +139,7 @@ path = "bench/sockets/1.rs"
 [[bin]]
 name = "sockets-2"
 path = "bench/sockets/2.rs"
+
+[[bin]]
+name = "timers-1"
+path = "bench/timers/1.rs"
