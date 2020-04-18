@@ -3,7 +3,7 @@ use std::io::{BufRead, BufReader};
 use crypto::digest::Digest;
 use crypto::sha2::Sha512;
 
-const FILENAME: &str = "asset/1000passwords";
+const FILENAME: &str = "asset/1000000passwords";
 
 fn main() {
     let file = File::open(FILENAME).unwrap();
