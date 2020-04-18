@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io::prelude::*;
 
 fn main() -> std::io::Result<()> {
-    let mut file = File::open("asset/lorem")?;
+    let mut file = File::open("asset/lorem100mb")?;
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
     let split = contents.split(" ");

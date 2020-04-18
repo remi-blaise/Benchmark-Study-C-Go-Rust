@@ -2,12 +2,16 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"strings"
 )
 
 func main() {
-	var s = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet euismod arcu. Duis ligula ex, feugiat mattis porta quis, maximus vitae ex. Praesent dapibus neque arcu, a consectetur sapien malesuada sit amet. Proin tempor ligula sed sem maximus, id."
-	var delimiter = " "
+	var dat, err = ioutil.ReadFile("asset/lorem100mb")
+	if err != nil {
+		panic(err)
+	}
 
-	fmt.Println(strings.Split(s, delimiter))
+	var result = strings.Split(string(dat), " ")
+	fmt.Println(len(result))
 }
