@@ -38,15 +38,10 @@ func main() {
 
 	// Multiply matrix
 	var prod = make([][]int, M) // Product: M*M
-	for i := range prod {
+	for i := 0; i < M; i++ {
 		prod[i] = make([]int, M)
-		for j := range prod[i] {
-			prod[i][j] = 0
-		}
-	}
-	for j := 0; j < M; j++ {
-		for i := 0; i < M; i++ {
-			for k := 0; k < N; k++ {
+		for k := 0; k < N; k++ {
+			for j := 0; j < M; j++ {
 				prod[i][j] += a[i][k] * b[k][j]
 			}
 		}

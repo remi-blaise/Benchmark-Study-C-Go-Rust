@@ -49,11 +49,11 @@ int main(int argc, char const *argv[])
 			prod[i][j] = 0;
 		}
 	}
-	for (int j = 0; j < M; j++)
+	for (int i = 0; i < M; i++)
 	{
-		for (int i = 0; i < M; i++)
+		for (int k = 0; k < N; k++)
 		{
-			for (int k = 0; k < N; k++)
+			for (int j = 0; j < M; j++)
 			{
 				prod[i][j] += a[i][k] * b[k][j];
 			}
