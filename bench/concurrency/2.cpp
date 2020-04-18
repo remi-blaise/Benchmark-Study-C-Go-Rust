@@ -3,11 +3,6 @@
 
 using namespace std;
 
-void subroutine(int i)
-{
-	cout << i << endl;
-}
-
 int main(int argc, char const *argv[])
 {
 	int n = 1000; // Number of processes

@@ -18,19 +18,8 @@ fn main() {
                 children.push(child)
             }
             ForkResult::Child => {
-                println!("{}", i);
                 std::process::exit(1);
             },
-        }
-    }
-
-    for child in children {
-        loop {
-            if let WaitStatus::Exited(_pid, _status) = waitpid(child, None).unwrap() {
-                break;
-            } else {
-                unimplemented!();
-            }
         }
     }
 }

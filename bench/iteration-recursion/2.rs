@@ -7,15 +7,15 @@ fn main() {
     } else {
         1000
     };
-    let a = rec(0, n);
+    let a = rec(n);
 
-    println!("{:?}", a);
+    println!("{}", a);
 }
 
-fn rec(a: u64, b: u64) -> u64 {
-    if b <= 0 {
-        a
+fn rec(n: u64) -> u64 {
+    if n <= 0 {
+        n
     } else {
-        rec(a + 1, b - 1)
+        rec(n - 1)
     }
 }

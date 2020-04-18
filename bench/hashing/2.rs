@@ -3,7 +3,7 @@ use std::io::prelude::*;
 use crypto::digest::Digest;
 use crypto::sha1::Sha1;
 
-const FILENAME: &str = "asset/random100mb";
+const FILENAME: &str = "asset/lorem100mb";
 
 fn main() {
     let mut file = File::open(FILENAME).unwrap();
@@ -14,5 +14,6 @@ fn main() {
     hasher.input(&contents);
     let _hash = hasher.result_str();
 
+    #[cfg(debug_assertions)]
     println!("{}", _hash);
 }

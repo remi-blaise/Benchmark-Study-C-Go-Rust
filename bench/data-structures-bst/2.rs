@@ -1,5 +1,5 @@
 use std::env;
-use std::collections::BTreeMap;
+use std::collections::BTreeSet;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -14,10 +14,10 @@ fn main() {
         1000000
     };
 
-    let mut bt = BTreeMap::new();
+    let mut bt = BTreeSet::new();
 
     for _ in 0..s {
-        bt.insert(rand::random::<i32>(), 0);
+        bt.insert(rand::random::<i32>());
     }
 
     for _ in 0..n {

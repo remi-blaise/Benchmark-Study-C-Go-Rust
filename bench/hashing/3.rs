@@ -16,6 +16,7 @@ fn main() {
         hasher.input_str(&line);
         let _hash = hasher.result_str();
 
+        #[cfg(debug_assertions)]
         println!("{}", _hash);
     }
 }

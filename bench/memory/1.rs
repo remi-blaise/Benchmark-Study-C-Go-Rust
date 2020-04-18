@@ -8,8 +8,6 @@ fn main() {
         1000_000_000
     } / 4;
 
-    println!("{}", n);
-
     let mut v = Vec::with_capacity(n);
 
     for _ in 0..n {

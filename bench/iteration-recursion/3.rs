@@ -18,5 +18,5 @@ fn main() {
         y = z;
     }
 
-    println!("{}\n", x);
+    println!("{}", x);
 }
