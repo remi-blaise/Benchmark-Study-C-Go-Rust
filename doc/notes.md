@@ -14,16 +14,16 @@ to retrieve reserved memory, shared memory, %cpu and %ram
 -------------------------
 
 Reste a faire :
-[ ] Go : deplacer et completer les cas de array -> vector
-[ ] BST: C++ et Go a remplacer par Google lib
+[x] Go : deplacer et completer les cas de array -> vector
+[x] BST: C++ et Go a remplacer par Google lib
 [x] BST: Rust a remplacer par Set
-[ ] Rust Matrix: a refaire a la main
-[ ] C++ Fork: attention a ne pas instancier 2\*\*n forks
-[ ] C++ & Go Concurrency: completer
-[ ] String: generate asset/lorem100mb
-[ ] Serialization: Implementer C++
-[ ] Serialization: Go
-[ ] Hashing: Implementer C++ & Go
+[ ] Rust Matrix: a refaire a la main (+ implémenter test 3)
+[x] C++ Fork: attention a ne pas instancier 2\*\*n forks
+[x] C++ & Go Concurrency: completer
+[x] String: generate asset/lorem100mb
+[x] Serialization: Implementer C++
+[x] Serialization: Go
+[x] Hashing: Implementer C++ & Go
 [ ] Rust Hashing changement fichier et utiliser algo non secure
-[ ] Sockets C et Go : mimic Rust
-[ ] Timers C et Go : passer les ns en params
+[x] Sockets C et Go : mimic Rust
+[x] Timers C et Go : passer les ns en params

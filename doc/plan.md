@@ -3,17 +3,17 @@
 1. Hello World: binary and memory size **(DONE)**
 2. Memory management: allocating memory, passing to a function, writing, reading, delete **(DONE)**
 3. Iteration vs recursion **(DONE)**
-4. Data structure operations: creation, insert, random access, delete, lifecycle on vectors (arrays), trees, graphs, stacks, heaps, queues and Standard sorting algorithms  **(WIP)**
+4. Data structure operations: creation, insert, random access, delete, lifecycle on vectors (arrays), trees, graphs, stacks, heaps, queues and Standard sorting algorithms  **(DONE)**
 5. Matrix operations: creation, multiplication (stock, ijk, transpose) → FLOPS **(WIP)**
-6. Concurrency mechanisms: creation, execution, suppression of a thread, process, coroutine, goroutine; mutual exclusion mechanisms **(WIP)**
-7. String: split function and binary representation (ASCII, UTF-8) **(WIP)**
-8. Data serialization
+6. Concurrency mechanisms: creation, execution, suppression of a thread, process, coroutine, goroutine; mutual exclusion mechanisms **(DONE)**
+7. String: split function and binary representation (ASCII, UTF-8) **(DONE)**
+8. Data serialization **(WIP)**
     - Rust & Go ?
     - C++: cereal, message pack, protobuf, …
 9. Hashing **(WIP)**
-10. Sockets: ping pong **(WIP)**
-11. Timers precision and time read
-12. Computation: complex numbers **(WIP)**
+10. Sockets: ping pong **(DONE)**
+11. Timers precision and time read **(DONE)**
+12. Computation: complex numbers **(DONE)**
 
 # Measure Tools
 
