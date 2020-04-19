@@ -9,7 +9,7 @@ CPP_DEBUG=-Wall
 
 RUST=cargo build $(RUST_OPTI)
 GO=go build
-CPP=g++ $(CPP_OPTI) $(CPP_DEBUG) -std=c++11 -pthread
+CPP=g++ $(CPP_OPTI) $(CPP_DEBUG) -std=c++11 -pthread -I bench/serialization
 
 GREEN=\e[1m\e[32m
 RESET=\e[0m
