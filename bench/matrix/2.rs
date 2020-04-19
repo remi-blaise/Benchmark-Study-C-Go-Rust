@@ -1,5 +1,5 @@
 use std::env;
-use simple_matrix::Matrix;
+use std::num::Wrapping;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -14,15 +14,34 @@ fn main() {
         1000
     };
 
-    let mut mat1: Matrix<i32> = Matrix::new(m, n);
-    let mut mat2: Matrix<i32> = Matrix::new(n, m);
+    // Create random matrixes
+
+    let mut a: Vec<Vec<Wrapping<i32>>> = Vec::with_capacity(m);
+    let mut b: Vec<Vec<Wrapping<i32>>> = Vec::with_capacity(m);
 
     for i in 0..m {
-        for j in 0..n {
-            mat1.set(i, j, rand::random::<i32>());
-            mat2.set(j, i, rand::random::<i32>());
-        }
-    };
+        a.push(Vec::with_capacity(n));
+        b.push(Vec::with_capacity(n));
 
-    let _ = mat1 * mat2;
+        for _ in 0..n {
+            a[i].push(Wrapping(rand::random::<i32>()));
+            b[i].push(Wrapping(rand::random::<i32>()));
+        }
+    }
+
+    // Multiply matrixes
+
+    let mut product: Vec<Vec<Wrapping<i32>>> = Vec::with_capacity(m);
+
+    for i in 0..m {
+        product.push(Vec::with_capacity(m));
+
+        for j in 0..m {
+            product[i].push(Wrapping(0));
+
+            for k in 0..n {
+                product[i][j] = product[i][j] + a[i][k] * b[k][j];
+            }
+        }
+    }
 }

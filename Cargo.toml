@@ -6,7 +6,6 @@ edition = "2018"
 
 [dependencies]
 rand = "0.7.3"
-simple-matrix = "0.1"
 num = "0.2.1"
 rust-crypto = "0.2.36"
 nix = "0.17.0"
@@ -15,6 +14,7 @@ serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0.51"
 bincode = "1.2.1"
 quick-xml = { version = "0.18.1", features = [ "serialize" ] }
+hashers = "1.0.1"
 
 [[bin]]
 name = "hello-world-1"
@@ -89,6 +89,10 @@ name = "matrix-2"
 path = "bench/matrix/2.rs"
 
 [[bin]]
+name = "matrix-3"
+path = "bench/matrix/3.rs"
+
+[[bin]]
 name = "string-1"
 path = "bench/string/1.rs"
 
@@ -123,6 +127,10 @@ path = "bench/hashing/2.rs"
 [[bin]]
 name = "hashing-3"
 path = "bench/hashing/3.rs"
+
+[[bin]]
+name = "hashing-4"
+path = "bench/hashing/4.rs"
 
 [[bin]]
 name = "concurrency-1"

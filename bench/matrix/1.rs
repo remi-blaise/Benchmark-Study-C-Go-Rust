@@ -1,5 +1,4 @@
 use std::env;
-use simple_matrix::Matrix;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -14,5 +13,9 @@ fn main() {
         1000
     };
 
-    let _mat: Matrix<i32> = Matrix::new(m, n);
+    let mut mat: Vec<Vec<i32>> = Vec::with_capacity(m);
+
+    for _ in 0..m {
+        mat.push(Vec::with_capacity(n));
+    }
 }
