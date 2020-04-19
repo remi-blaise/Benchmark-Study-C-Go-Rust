@@ -25,6 +25,6 @@ func main() {
 
 		// Receive reply
 		var newmessage, _ = bufio.NewReader(conn).ReadString('\n')
-		fmt.Print("Reply:", string(newmessage))
+		fmt.Print("Reply: ", string(newmessage))
 	}
 }

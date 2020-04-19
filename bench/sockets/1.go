@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"net"
 )
 
@@ -16,9 +17,9 @@ func main() {
 	// Run loop forever
 	for {
 		// Will listen for message to process ending in newline (\n)
-		var message, _ = bufio.NewReader(conn).ReadString('\n')
-		if message != "" {
-			fmt.Print("Message received:", string(message))
+		var message, err = bufio.NewReader(conn).ReadString('\n')
+		if err == io.EOF {
+			return
 		}
 
 		// Reply
