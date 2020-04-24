@@ -19,6 +19,6 @@ func main() {
 	S = S / strconv.IntSize
 
 	for i := 0; i < N; i++ {
-		var p = make([]int, S)
+		_ = make([]int, S)
 	}
 }

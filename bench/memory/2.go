@@ -7,7 +7,6 @@ import (
 
 func main() {
 	var S = 1_000_000_000 // 1 GB
-	var tmp int
 	var args = os.Args[1:]
 	if len(args) >= 1 {
 		S, _ = strconv.Atoi(args[0])
@@ -17,6 +16,6 @@ func main() {
 
 	var p = make([]int, S)
 	for _, v := range p {
-		tmp = v
+		_ = v
 	}
 }
