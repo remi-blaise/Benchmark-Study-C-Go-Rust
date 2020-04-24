@@ -9,7 +9,7 @@ deps_install:
 	wget https://dl.google.com/go/go1.14.linux-amd64.tar.gz
 	tar -C $$HOME -xzf go1.14.linux-amd64.tar.gz
 	rm go1.14.linux-amd64.tar.gz
-	@echo "export PATH=\$$PATH:\$$HOME/go/bin" >> ~/.profile
+	echo "export PATH=\$$PATH:\$$HOME/go/bin" >> ~/.profile
 	go get github.com/google/btree
 
 	@echo "\n$(GREEN)Done!$(RESET)"
