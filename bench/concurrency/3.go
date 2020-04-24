@@ -11,7 +11,7 @@ const (
 )
 
 func main() {
-	var n = 10000 // Number of processes
+	var n = 1500 // Number of processes
 	var args = os.Args[1:]
 	if len(args) >= 1 {
 		if args[0] == CHILD_ARG {

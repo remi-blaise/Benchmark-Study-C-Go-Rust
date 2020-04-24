@@ -13,7 +13,7 @@ void subroutine()
 
 int main(int argc, char const *argv[])
 {
-	int n = 10000; // Number of threads
+	int n = 25000; // Number of threads
 	if (argc == 2)
 	{
 		n = atoi(argv[1]);

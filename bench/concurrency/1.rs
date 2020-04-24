@@ -8,7 +8,7 @@ fn main() {
     let n = if args.len() > 1 {
         args[1].parse::<usize>().unwrap()
     } else {
-        10000
+        25000
     };
 
     let mut threads: Vec<thread::JoinHandle<_>> = Vec::new();

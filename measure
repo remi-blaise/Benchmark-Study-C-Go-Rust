@@ -27,7 +27,7 @@ for file in `ls bin/*/*/*`; do
     # Start monitoring
 
     top -b -d 0.001 > ${TMP_FILE} &
-    sleep 1
+    sleep .25
 
     # Execute
 
@@ -37,7 +37,7 @@ for file in `ls bin/*/*/*`; do
 
     # Stop monitoring
 
-    sleep 1
+    sleep .25
     killall top
 
     # Compute

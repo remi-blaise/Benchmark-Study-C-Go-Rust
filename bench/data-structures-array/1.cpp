@@ -5,7 +5,7 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-	int S = 1000000;
+	int S = 25000000;
 	if (argc == 2)
 	{
 		S = atoi(argv[1]);
