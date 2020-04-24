@@ -38,4 +38,3 @@ Interrogations :
     - 2.go prod[i][j] += a[i][k] * b[k][j] non-initialized ?
     - do we ignore overflow ?
     - je ne pense pas qu'echanger les variables puisse avoir un impact a cause de la symetrie
->>>>>>> Some Rust

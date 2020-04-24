@@ -41,9 +41,9 @@ fn main() {
         }
     }
 
-    for j in 0..m {
-        for i in 0..m {
-            for k in 0..n {
+    for i in 0..m {
+        for k in 0..m {
+            for j in 0..n {
                 product[i][j] = product[i][j] + a[i][k] * b[k][j];
             }
         }
