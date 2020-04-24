@@ -16,7 +16,7 @@ func main() {
 
 	for scanner.Scan() {
 		var h = sha512.New()
-		h.Write(scanner.Text())
+		h.Write([]byte(scanner.Text()))
 		h.Sum(nil)
 	}
 }

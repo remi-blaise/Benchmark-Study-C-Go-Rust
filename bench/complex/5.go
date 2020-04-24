@@ -18,7 +18,7 @@ func main() {
 	}
 
 	for i := 0; i < n; i++ {
-		comp := comple8(complex(rand.Float32(), rand.Float32()))
+		comp := complex128(complex(rand.Float32(), rand.Float32()))
 		_ = cmplx.Cos(comp)
 		_ = cmplx.Sin(comp)
 	}

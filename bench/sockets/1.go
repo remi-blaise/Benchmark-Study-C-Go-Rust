@@ -17,7 +17,7 @@ func main() {
 	// Run loop forever
 	for {
 		// Will listen for message to process ending in newline (\n)
-		var message, err = bufio.NewReader(conn).ReadString('\n')
+		var _, err = bufio.NewReader(conn).ReadString('\n')
 		if err == io.EOF {
 			return
 		}
