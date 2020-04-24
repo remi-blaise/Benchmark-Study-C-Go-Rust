@@ -1,0 +1,96 @@
+#!/bin/bash
+
+GREEN="\e[1m\e[32m"
+BLUE="\e[1m\e[34m"
+RESET="\e[0m"
+
+FILE=measures/execution-times.csv
+TMP_FILE=measures/top-result
+TMP_EXEC_NAME=tmp-executable
+TMP_EXEC=measures/${TMP_EXEC_NAME}
+
+mkdir -p measures
+
+echo script,binary_size,total_duration,critical_duration,reserved_memory,shared_memory,cpu_percent,ram_percent > ${FILE}
+for file in `ls bin/*/*/*`; do
+    if [[ ${file} == *"sockets"* ]]; then
+        continue
+    fi
+
+    echo -e ${BLUE}"Executing ${file} ..."${RESET}
+    cp ${file} ${TMP_EXEC}
+
+    # Measure size
+
+    size=`stat --printf="%s" ${TMP_EXEC}`
+
+    # Start monitoring
+
+    top -b -d 0.001 > ${TMP_FILE} &
+    sleep 1
+
+    # Execute
+
+    start=`date +%s%N`
+    critical_duration=`${TMP_EXEC}`
+    end=`date +%s%N`
+
+    # Stop monitoring
+
+    sleep 1
+    killall top
+
+    # Compute
+
+    total_duration=$((end - start))
+    reserved_memory=`cat ${TMP_FILE} | grep ${TMP_EXEC_NAME} | perl -pe 's/^\s+//' | tr -s " " | cut -f 6 -d " " | sort -n | tail -1`
+    shared_memory=`cat ${TMP_FILE} | grep ${TMP_EXEC_NAME} | perl -pe 's/^\s+//' | tr -s " " | cut -f 7 -d " " | sort -n | tail -1`
+    cpu_percent=`cat ${TMP_FILE} | grep ${TMP_EXEC_NAME} | perl -pe 's/^\s+//' | tr -s " " | cut -f 9 -d " " | sort -n | tail -1`
+    ram_percent=`cat ${TMP_FILE} | grep ${TMP_EXEC_NAME} | perl -pe 's/^\s+//' | tr -s " " | cut -f 10 -d " " | sort -n | tail -1`
+    script=`echo ${file} | sed "s/bin\///" | sed "s/rust\///" | sed "s/go\///" | sed "s/cpp\///"`
+
+    # Save
+
+    echo ${script},${size},${total_duration},${critical_duration},${reserved_memory},${shared_memory},${cpu_percent},${ram_percent} >> ${FILE}
+done
+
+for lang in rust go cpp; do
+    echo -e ${BLUE}"Executing bin/sockets/${lang} ..."${RESET}
+
+    # Measure size
+
+    size=`stat --printf="%s" bin/sockets/${lang}/2`
+
+    # Start monitoring
+
+    top -b -d 0.001 > ${TMP_FILE} &
+    sleep 1
+
+    # Execute
+
+    start=`date +%s%N`
+    bin/sockets/${lang}/1 > /dev/null &
+    critical_duration=`bin/sockets/${lang}/2`
+    end=`date +%s%N`
+
+    # Stop monitoring
+
+    sleep 1
+    killall top
+
+    # Compute
+
+    total_duration=$((end - start))
+    top_measures=`cat ${TMP_FILE} | grep ${TMP_EXEC_NAME} | perl -pe 's/^\s+//' | tr -s " "`
+    reserved_memory=`echo ${top_measures} | cut -f 6 -d " "`
+    shared_memory=`echo ${top_measures} | cut -f 7 -d " "`
+    cpu_percent=`echo ${top_measures} | cut -f 9 -d " "`
+    ram_percent=`echo ${top_measures} | cut -f 10 -d " "`
+
+    # Save
+
+    echo sockets/${lang},${size},${total_duration},${critical_duration},${reserved_memory},${shared_memory},${cpu_percent},${ram_percent} >> ${FILE}
+done
+
+rm ${TMP_EXEC} ${TMP_FILE}
+cat ${FILE}

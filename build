@@ -3,25 +3,24 @@
 benchdir="./bench/"
 bindir="./bin/"
 
-RUST_OPTI="--release"
-CPP_OPTI="-O2"
-
-RUST_DEBUG=""
-CPP_DEBUG=""
-
-RUST="cargo build ${RUST_OPTI}"
+RUST="cargo build --release"
 GO="go build"
-CPP="g++ ${CPP_OPTI} ${CPP_DEBUG} -std=c++11 -pthread -I bench/serialization"
+CPP="g++ -O2 -std=c++11 -pthread -I bench/serialization"
 
 GREEN="\e[1m\e[32m"
 BLUE="\e[1m\e[34m"
 RESET="\e[0m"
 
-echo -e ${GREEN}"Cleaning bin/..."$RESET
+FILE=measures/compilation-times.csv
+echo language,compilation_time > ${FILE}
+
+echo -e ${GREEN}"Cleaning bin/ ...\n"$RESET
 rm -r ${bindir}
 
-echo -e ${GREEN}"Building Rust..."$RESET
-cargo build --release
+start=`date +%s%N`
+
+echo -e ${GREEN}"Building Rust ..."$RESET
+${RUST}
 
 for section in `ls bench`; do
     echo -e ${BLUE}${section}${RESET}
@@ -31,9 +30,15 @@ for section in `ls bench`; do
         cp target/release/${section}-$filename ${bindir}${section}/rust/$filename
     done
 done
-echo -e ${GREEN}"Built Rust!"${RESET}
+echo -e ${GREEN}"Built Rust!\n"${RESET}
 
-echo -e ${GREEN}"Building Go..."$RESET
+end=`date +%s%N`
+total_duration=$((end - start))
+echo rust,${total_duration} >> ${FILE}
+
+start=`date +%s%N`
+
+echo -e ${GREEN}"Building Go ..."$RESET
 for section in `ls bench`; do
     echo -e ${BLUE}${section}${RESET}
     mkdir -p ${bindir}${section}/go
@@ -41,9 +46,15 @@ for section in `ls bench`; do
         ${GO} -o ${bindir}${section}/go $f
     done
 done
-echo -e "${GREEN}Built Go!${RESET}\n"
+echo -e ${GREEN}"Built Go!\n"${RESET}
 
-echo -e ${GREEN}"Building C++..."$RESET
+end=`date +%s%N`
+total_duration=$((end - start))
+echo go,${total_duration} >> ${FILE}
+
+start=`date +%s%N`
+
+echo -e ${GREEN}"Building C++ ..."$RESET
 for section in `ls bench`; do
     echo -e ${BLUE}${section}${RESET}
     mkdir -p ${bindir}${section}/cpp
@@ -52,4 +63,8 @@ for section in `ls bench`; do
         ${CPP} -o ${bindir}${section}/cpp/$OUT $f
     done
 done
-echo -e "${GREEN}Built C++!${RESET}\n"
+echo -e ${GREEN}"Built C++!\n"${RESET}
+
+end=`date +%s%N`
+total_duration=$((end - start))
+echo cpp,${total_duration} >> ${FILE}

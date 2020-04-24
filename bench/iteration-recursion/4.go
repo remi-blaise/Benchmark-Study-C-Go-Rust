@@ -15,7 +15,7 @@ func fib(n uint64) uint64 {
 }
 
 func main() {
-	var n uint64 = 100
+	var n uint64 = 40
 	var args = os.Args[1:]
 	if len(args) >= 1 {
 		n, _ = strconv.ParseUint(args[0], 10, 64)

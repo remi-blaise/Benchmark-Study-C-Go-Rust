@@ -15,7 +15,7 @@ int fib(unsigned int n)
 
 int main(int argc, char const *argv[])
 {
-	unsigned int n = 100;
+	unsigned int n = 40;
 	if (argc == 2)
 	{
 		n = atoi(argv[1]);

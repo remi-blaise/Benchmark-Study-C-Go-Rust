@@ -5,7 +5,7 @@ fn main() {
     let mut n: u64 = if args.len() > 1 {
         args[1].parse().unwrap()
     } else {
-        100
+        40
     };
 
     n = fib(n);
