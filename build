@@ -7,7 +7,7 @@ RUST_OPTI="--release"
 CPP_OPTI="-O2"
 
 RUST_DEBUG=""
-CPP_DEBUG="-Wall"
+CPP_DEBUG=""
 
 RUST="cargo build ${RUST_OPTI}"
 GO="go build"
@@ -17,11 +17,10 @@ GREEN="\e[1m\e[32m"
 BLUE="\e[1m\e[34m"
 RESET="\e[0m"
 
-echo -e ${BLUE}"Cleaning bin/..."$RESET
+echo -e ${GREEN}"Cleaning bin/..."$RESET
 rm -r ${bindir}
-echo -e ${GREEN}"Clean!"${RESET}
 
-echo -e ${BLUE}"Building Rust..."$RESET
+echo -e ${GREEN}"Building Rust..."$RESET
 cargo build --release
 
 for section in `ls bench`; do
@@ -34,21 +33,21 @@ for section in `ls bench`; do
 done
 echo -e ${GREEN}"Built Rust!"${RESET}
 
-echo -e ${BLUE}"Building Go..."$RESET
+echo -e ${GREEN}"Building Go..."$RESET
 for section in `ls bench`; do
     echo -e ${BLUE}${section}${RESET}
     mkdir -p ${bindir}${section}/go
-    for f in $(ls ${benchdir}${section}/*.go) ; do
+    for f in $(ls ${benchdir}${section}/*.go 2>/dev/null) ; do
         ${GO} -o ${bindir}${section}/go $f
     done
 done
 echo -e "${GREEN}Built Go!${RESET}\n"
 
-echo -e ${BLUE}"Building C++..."$RESET
+echo -e ${GREEN}"Building C++..."$RESET
 for section in `ls bench`; do
     echo -e ${BLUE}${section}${RESET}
     mkdir -p ${bindir}${section}/cpp
-    for f in $(ls ${benchdir}${section}/*.cpp) ; do
+    for f in $(ls ${benchdir}${section}/*.cpp 2>/dev/null) ; do
         OUT=$(basename $f | sed -E "s/(.*).cpp/\1/")
         ${CPP} -o ${bindir}${section}/cpp/$OUT $f
     done
