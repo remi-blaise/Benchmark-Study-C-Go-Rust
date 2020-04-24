@@ -1,0 +1,56 @@
+#!/bin/bash
+
+benchdir="./bench/"
+bindir="./bin/"
+
+RUST_OPTI="--release"
+CPP_OPTI="-O2"
+
+RUST_DEBUG=""
+CPP_DEBUG="-Wall"
+
+RUST="cargo build ${RUST_OPTI}"
+GO="go build"
+CPP="g++ ${CPP_OPTI} ${CPP_DEBUG} -std=c++11 -pthread -I bench/serialization"
+
+GREEN="\e[1m\e[32m"
+BLUE="\e[1m\e[34m"
+RESET="\e[0m"
+
+echo -e ${BLUE}"Cleaning bin/..."$RESET
+rm -r ${bindir}
+echo -e ${GREEN}"Clean!"${RESET}
+
+echo -e ${BLUE}"Building Rust..."$RESET
+cargo build --release
+
+for section in `ls bench`; do
+    echo -e ${BLUE}${section}${RESET}
+    mkdir -p ${bindir}${section}/rust
+    for f in $(ls ${benchdir}${section}/*.rs 2>/dev/null); do
+        filename=`echo $f | sed 's:.*/::' | sed 's:.rs::'`
+        cp target/release/${section}-$filename ${bindir}${section}/rust/$filename
+    done
+done
+echo -e ${GREEN}"Built Rust!"${RESET}
+
+echo -e ${BLUE}"Building Go..."$RESET
+for section in `ls bench`; do
+    echo -e ${BLUE}${section}${RESET}
+    mkdir -p ${bindir}${section}/go
+    for f in $(ls ${benchdir}${section}/*.go) ; do
+        ${GO} -o ${bindir}${section}/go $f
+    done
+done
+echo -e "${GREEN}Built Go!${RESET}\n"
+
+echo -e ${BLUE}"Building C++..."$RESET
+for section in `ls bench`; do
+    echo -e ${BLUE}${section}${RESET}
+    mkdir -p ${bindir}${section}/cpp
+    for f in $(ls ${benchdir}${section}/*.cpp) ; do
+        OUT=$(basename $f | sed -E "s/(.*).cpp/\1/")
+        ${CPP} -o ${bindir}${section}/cpp/$OUT $f
+    done
+done
+echo -e "${GREEN}Built C++!${RESET}\n"

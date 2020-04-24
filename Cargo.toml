@@ -105,11 +105,11 @@ name = "complex-2"
 path = "bench/complex/2.rs"
 
 [[bin]]
-name = "datacomplexvector-3"
+name = "complex-3"
 path = "bench/complex/3.rs"
 
 [[bin]]
-name = "datacomplexvector-4"
+name = "complex-4"
 path = "bench/complex/4.rs"
 
 [[bin]]
