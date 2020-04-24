@@ -15,7 +15,7 @@ to retrieve reserved memory, shared memory, %cpu and %ram
 
 TODO:
 [ ] Make a build-all command
-[ ] Measure bin sizes and output in a csv
+[x] Measure bin sizes and output in a csv
 [ ] Measure execution time and output in a csv
 
 [ ] Make a script that install, build all and execute
