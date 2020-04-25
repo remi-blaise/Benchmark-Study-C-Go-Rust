@@ -4,6 +4,8 @@ import (
 	"os"
 	"sort"
 	"strconv"
+	"fmt"
+	"time"
 )
 
 func main() {
@@ -20,5 +22,9 @@ func main() {
 		arr[i] = n - i
 	}
 
+	var start = time.Now()
+
 	sort.Ints(arr)
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

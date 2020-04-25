@@ -3,6 +3,8 @@ package main
 import (
 	"os"
 	"strconv"
+	"fmt"
+	"time"
 )
 
 func main() {
@@ -18,7 +20,11 @@ func main() {
 
 	S = S / strconv.IntSize
 
+	var start = time.Now()
+
 	for i := 0; i < N; i++ {
 		_ = make([]int, S)
 	}
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

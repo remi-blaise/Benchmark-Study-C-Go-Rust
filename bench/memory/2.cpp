@@ -1,4 +1,5 @@
 #include <iostream>
+#include <chrono>
 
 using namespace std;
 
@@ -15,10 +16,14 @@ int main(int argc, char const *argv[])
 
 	int *p = (int *)malloc(S * sizeof(int));
 
+	auto start = chrono::steady_clock::now();
+
 	for (int i = 0; i < S; i++)
 	{
 		tmp = p[i];
 	}
+
+	cout << chrono::duration_cast<chrono::nanoseconds>(chrono::steady_clock::now() - start).count() << endl;
 
 	free(p);
 

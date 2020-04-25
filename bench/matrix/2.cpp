@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <chrono>
 
 using namespace std;
 
@@ -39,6 +40,8 @@ int main(int argc, char const *argv[])
 		}
 	}
 
+	auto start = chrono::steady_clock::now();
+
 	// Multiply the matrix
 	int **prod = (int **)malloc(M * sizeof(int *)); // Product: M*M
 	for (int i = 0; i < M; ++i)
@@ -59,6 +62,8 @@ int main(int argc, char const *argv[])
 			}
 		}
 	}
+
+	cout << chrono::duration_cast<chrono::nanoseconds>(chrono::steady_clock::now() - start).count() << endl;
 
 	// Free the memory
 	for (int i = 0; i < M; i++)

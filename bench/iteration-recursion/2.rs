@@ -1,4 +1,5 @@
 use std::env;
+use std::time::Instant;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -7,9 +8,14 @@ fn main() {
     } else {
         1000
     };
+
+    let start = Instant::now();
+
     let a = rec(n);
 
     println!("{}", a);
+
+    println!("{}", start.elapsed().as_nanos());
 }
 
 fn rec(n: u64) -> u64 {

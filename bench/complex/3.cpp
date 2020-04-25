@@ -2,6 +2,7 @@
 #include <complex>
 #include <ctime>
 #include <cstdlib>
+#include <chrono>
 
 #define X 99999999.0
 
@@ -22,11 +23,15 @@ int main(int argc, char const *argv[])
 		n = atoi(argv[1]);
 	}
 
+	auto start = chrono::steady_clock::now();
+
 	for (int i = 0; i < n; i++)
 	{
 		complex<float> comp(rand_float(), rand_float());
 		float a = abs(comp);
 	}
+
+	cout << chrono::duration_cast<chrono::nanoseconds>(chrono::steady_clock::now() - start).count() << endl;
 
 	return 0;
 }

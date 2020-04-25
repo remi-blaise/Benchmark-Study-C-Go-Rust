@@ -1,6 +1,7 @@
 use std::env;
 use std::thread;
 use std::sync::{Arc, Mutex};
+use std::time::Instant;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -12,6 +13,8 @@ fn main() {
 
     let mut threads: Vec<thread::JoinHandle<_>> = Vec::new();
     let x = Arc::new(Mutex::new(0));
+
+    let start = Instant::now();
 
     for _ in 0..n {
         let x = Arc::clone(&x);
@@ -26,4 +29,6 @@ fn main() {
     }
 
     println!("{}", x.lock().unwrap());
+
+    println!("{}", start.elapsed().as_nanos());
 }

@@ -4,6 +4,7 @@ import (
 	"math/rand"
 	"os"
 	"strconv"
+	"fmt"
 	"time"
 )
 
@@ -26,10 +27,14 @@ func main() {
 		arr[i] = 42
 	}
 
+	var start = time.Now()
+
 	var sum = 0;
 
 	for i := 0; i < n; i++ {
 		sum += arr[rand.Int()%S]
 		S -= 1
 	}
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

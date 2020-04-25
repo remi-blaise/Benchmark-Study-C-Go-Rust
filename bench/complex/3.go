@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"time"
+	"fmt"
 )
 
 func main() {
@@ -17,8 +18,12 @@ func main() {
 		n, _ = strconv.Atoi(args[0])
 	}
 
+	var start = time.Now()
+
 	for i := 0; i < n; i++ {
 		comp := complex128(complex(rand.Float32(), rand.Float32()))
 		_ = cmplx.Abs(comp)
 	}
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

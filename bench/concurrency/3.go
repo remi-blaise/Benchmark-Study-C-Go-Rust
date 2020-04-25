@@ -4,6 +4,8 @@ import (
 	"os"
 	"strconv"
 	"syscall"
+	"fmt"
+	"time"
 )
 
 const (
@@ -21,7 +23,11 @@ func main() {
 		n, _ = strconv.Atoi(args[0])
 	}
 
+	var start = time.Now()
+
 	for i := 0; i < n; i++ {
 		syscall.ForkExec(os.Args[0], []string{os.Args[0], CHILD_ARG}, &syscall.ProcAttr{Files: []uintptr{0, 1, 2}})
 	}
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

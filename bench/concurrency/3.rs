@@ -1,5 +1,6 @@
 use std::env;
-use nix::unistd::{fork, ForkResult, Pid};
+use nix::unistd::{fork, ForkResult};
+use std::time::Instant;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -9,16 +10,16 @@ fn main() {
         10000
     };
 
-    let mut children: Vec<Pid> = Vec::new();
+    let start = Instant::now();
 
     for _ in 0..n {
         match fork().unwrap() {
-            ForkResult::Parent { child } => {
-                children.push(child)
-            }
+            ForkResult::Parent { .. } => {}
             ForkResult::Child => {
-                std::process::exit(1);
+                std::process::exit(0);
             },
         }
     }
+
+    println!("{}", start.elapsed().as_nanos());
 }

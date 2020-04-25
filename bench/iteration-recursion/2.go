@@ -3,6 +3,8 @@ package main
 import (
 	"os"
 	"strconv"
+	"fmt"
+	"time"
 )
 
 // Recursion function
@@ -21,7 +23,11 @@ func main() {
 		n, _ = strconv.ParseUint(args[0], 10, 64)
 	}
 
+	var start = time.Now()
+
 	n = rec(n)
 
 	println(n)
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

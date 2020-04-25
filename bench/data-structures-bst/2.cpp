@@ -2,6 +2,7 @@
 #include <ctime>
 #include <cstdlib>
 #include "cpp-btree/btree_set.h"
+#include <chrono>
 
 using namespace std;
 
@@ -28,10 +29,14 @@ int main(int argc, char const *argv[])
 		btree.insert(rand());
 	}
 
+	auto start = chrono::steady_clock::now();
+
 	for (int i = 0; i < n; i++)
 	{
 		btree.erase(rand());
 	}
+
+	cout << chrono::duration_cast<chrono::nanoseconds>(chrono::steady_clock::now() - start).count() << endl;
 
 	return 0;
 }

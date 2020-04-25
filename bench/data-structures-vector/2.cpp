@@ -2,6 +2,7 @@
 #include <vector>
 #include <ctime>
 #include <cstdlib>
+#include <chrono>
 
 using namespace std;
 
@@ -28,6 +29,8 @@ int main(int argc, char const *argv[])
 		vec.push_back(42);
 	}
 
+	auto start = chrono::steady_clock::now();
+
 	int sum = 0;
 
 	for (int i = 0; i < n; i++)
@@ -35,6 +38,8 @@ int main(int argc, char const *argv[])
 		sum += vec.at(rand() % S);
 		S -= 1;
 	}
+
+	cout << chrono::duration_cast<chrono::nanoseconds>(chrono::steady_clock::now() - start).count() << endl;
 
 	return 0;
 }

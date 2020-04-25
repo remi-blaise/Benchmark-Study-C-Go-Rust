@@ -1,5 +1,6 @@
 use std::env;
 use std::collections::HashMap;
+use std::time::Instant;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -11,7 +12,11 @@ fn main() {
 
     let mut map = HashMap::new();
 
+    let start = Instant::now();
+
     for _ in 0..n {
         map.insert(rand::random::<i32>(), 0);
     }
+
+    println!("{}", start.elapsed().as_nanos());
 }

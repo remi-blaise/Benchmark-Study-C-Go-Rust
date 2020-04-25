@@ -1,5 +1,6 @@
 use std::env;
 use num::complex::Complex;
+use std::time::Instant;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -9,8 +10,12 @@ fn main() {
         50000000
     };
 
+    let start = Instant::now();
+
     for _ in 0..n {
         let complex1 = Complex::<f32>::new(rand::random(), rand::random());
         let _ = complex1.arg();
     }
+
+    println!("{}", start.elapsed().as_nanos());
 }

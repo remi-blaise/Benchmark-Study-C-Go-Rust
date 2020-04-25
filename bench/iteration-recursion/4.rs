@@ -1,4 +1,5 @@
 use std::env;
+use std::time::Instant;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -8,9 +9,13 @@ fn main() {
         40
     };
 
+    let start = Instant::now();
+
     n = fib(n);
 
     println!("{}", n);
+
+    println!("{}", start.elapsed().as_nanos());
 }
 
 fn fib(n: u64) -> u64 {

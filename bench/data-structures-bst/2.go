@@ -4,6 +4,7 @@ import (
 	"math/rand"
 	"os"
 	"strconv"
+	"fmt"
 	"time"
 
 	"github.com/google/btree"
@@ -28,7 +29,11 @@ func main() {
 		tr.ReplaceOrInsert(btree.Int(rand.Int()))
 	}
 
+	var start = time.Now()
+
 	for i := 0; i < n; i++ {
 		tr.Delete(btree.Int(rand.Int()))
 	}
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

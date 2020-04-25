@@ -4,6 +4,7 @@ import (
 	"math/rand"
 	"os"
 	"strconv"
+	"fmt"
 	"time"
 )
 
@@ -36,6 +37,8 @@ func main() {
 		}
 	}
 
+	var start = time.Now()
+
 	// Multiply matrix
 	var prod = make([][]int, M) // Product: M*M
 	for i := 0; i < M; i++ {
@@ -46,4 +49,6 @@ func main() {
 			}
 		}
 	}
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

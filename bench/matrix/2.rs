@@ -1,5 +1,6 @@
 use std::env;
 use std::num::Wrapping;
+use std::time::Instant;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -29,6 +30,8 @@ fn main() {
         }
     }
 
+    let start = Instant::now();
+
     // Multiply matrixes
 
     let mut product: Vec<Vec<Wrapping<i32>>> = Vec::with_capacity(m);
@@ -44,4 +47,6 @@ fn main() {
             }
         }
     }
+
+    println!("{}", start.elapsed().as_nanos());
 }

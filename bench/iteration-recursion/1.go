@@ -3,6 +3,8 @@ package main
 import (
 	"os"
 	"strconv"
+	"fmt"
+	"time"
 )
 
 func main() {
@@ -12,9 +14,13 @@ func main() {
 		n, _ = strconv.ParseUint(args[0], 10, 64)
 	}
 
+	var start = time.Now()
+
 	for n > 0 {
 		n--
 	}
 
 	println(n)
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 	"io/ioutil"
 	"strings"
 )
@@ -12,6 +13,10 @@ func main() {
 		panic(err)
 	}
 
+	var start = time.Now()
+
 	var result = strings.Split(string(dat), " ")
 	fmt.Println(len(result))
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

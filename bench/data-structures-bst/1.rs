@@ -1,5 +1,6 @@
 use std::env;
 use std::collections::BTreeSet;
+use std::time::Instant;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -11,7 +12,11 @@ fn main() {
 
     let mut bt = BTreeSet::new();
 
+    let start = Instant::now();
+
     for _ in 0..s {
         bt.insert(rand::random::<i32>());
     }
+
+    println!("{}", start.elapsed().as_nanos());
 }

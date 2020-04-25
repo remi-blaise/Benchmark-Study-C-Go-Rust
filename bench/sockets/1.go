@@ -2,9 +2,10 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"io"
 	"net"
+	"fmt"
+	"time"
 )
 
 func main() {
@@ -13,6 +14,8 @@ func main() {
 
 	// Accept connection
 	var conn, _ = ln.Accept()
+
+	var start = time.Now()
 
 	// Run loop forever
 	for {
@@ -26,4 +29,6 @@ func main() {
 		var newmessage = "Hello from server\n"
 		fmt.Fprintf(conn, newmessage)
 	}
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

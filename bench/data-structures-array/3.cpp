@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <ctime>
 #include <cstdlib>
+#include <chrono>
 
 using namespace std;
 
@@ -23,7 +24,11 @@ int main(int argc, char const *argv[])
 		arr[i] = rand();
 	}
 
+	auto start = chrono::steady_clock::now();
+
 	sort(arr, arr + S);
+
+	cout << chrono::duration_cast<chrono::nanoseconds>(chrono::steady_clock::now() - start).count() << endl;
 
 	return 0;
 }

@@ -1,5 +1,6 @@
 use std::env;
 use std::thread;
+use std::time::Instant;
 
 static mut X: i32 = 0;
 
@@ -12,6 +13,8 @@ fn main() {
     };
 
     let mut threads: Vec<thread::JoinHandle<_>> = Vec::new();
+
+    let start = Instant::now();
 
     for _ in 0..n {
         threads.push(thread::spawn(move || {
@@ -28,4 +31,6 @@ fn main() {
     unsafe {
         println!("{}", X);
     }
+
+    println!("{}", start.elapsed().as_nanos());
 }

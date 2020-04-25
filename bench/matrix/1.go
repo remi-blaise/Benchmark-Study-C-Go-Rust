@@ -3,6 +3,8 @@ package main
 import (
 	"os"
 	"strconv"
+	"fmt"
+	"time"
 )
 
 func main() {
@@ -16,8 +18,12 @@ func main() {
 		}
 	}
 
+	var start = time.Now()
+
 	var mat = make([][]int, M)
 	for i := range mat {
 		mat[i] = make([]int, N)
 	}
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

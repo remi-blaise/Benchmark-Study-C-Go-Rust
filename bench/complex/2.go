@@ -5,6 +5,7 @@ import (
 	"os"
 	"strconv"
 	"time"
+	"fmt"
 )
 
 func main() {
@@ -16,10 +17,14 @@ func main() {
 		n, _ = strconv.Atoi(args[0])
 	}
 
+	var start = time.Now()
+
 	for i := 0; i < n; i++ {
 		complex1 := complex(rand.Float32(), rand.Float32())
 		complex2 := complex(rand.Float32(), rand.Float32())
 		_ = complex1 * complex2
 		_ = complex1 / complex2
 	}
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

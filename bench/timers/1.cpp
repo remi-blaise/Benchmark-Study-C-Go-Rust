@@ -6,22 +6,20 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    int n = 1000000000; // 1 second
+    int n = 30000000; // 1 second
 	if (argc == 2)
 	{
 		n = atoi(argv[1]);
 	}
 
     auto start = chrono::steady_clock::now();
-    auto end = chrono::steady_clock::now();
-    long long int counter = 0;
-    
-    while (chrono::duration_cast<chrono::nanoseconds>(end - start).count() < n) {
-        end = chrono::steady_clock::now();
-        counter++;
+
+    for (int i = 0; i < n; ++i)
+    {
+        chrono::steady_clock::now();
     }
 
-    cout << counter << endl;
+    cout << chrono::duration_cast<chrono::nanoseconds>(chrono::steady_clock::now() - start).count() << endl;
 
     return 0;
 }

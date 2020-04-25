@@ -1,4 +1,5 @@
 use std::env;
+use std::time::Instant;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -7,6 +8,8 @@ fn main() {
     } else {
         40
     };
+
+    let start = Instant::now();
 
     let mut x: i32 = 0;
     let mut y: i32 = 1;
@@ -19,4 +22,6 @@ fn main() {
     }
 
     println!("{}", x);
+
+    println!("{}", start.elapsed().as_nanos());
 }

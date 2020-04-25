@@ -1,4 +1,5 @@
 use std::env;
+use std::time::Instant;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
@@ -14,5 +15,9 @@ fn main() {
         vec.push(i);
     }
 
+    let start = Instant::now();
+
     vec.sort_unstable();
+
+    println!("{}", start.elapsed().as_nanos());
 }

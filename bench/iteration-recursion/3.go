@@ -3,6 +3,8 @@ package main
 import (
 	"os"
 	"strconv"
+	"fmt"
+	"time"
 )
 
 func main() {
@@ -12,6 +14,8 @@ func main() {
 		n, _ = strconv.Atoi(args[0])
 	}
 
+	var start = time.Now()
+
 	var x, y = 0, 1
 	for i := 0; i < n; i++ {
 		z := x + y
@@ -20,4 +24,6 @@ func main() {
 	}
 
 	println(x)
+
+	fmt.Println(time.Now().Sub(start).Nanoseconds())
 }

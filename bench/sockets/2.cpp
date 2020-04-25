@@ -4,6 +4,7 @@
 #include <sys/socket.h> // socket
 #include <arpa/inet.h>	// inet_addr
 #include <netdb.h>		// hostent
+#include <chrono>
 
 using namespace std;
 
@@ -34,9 +35,10 @@ int main(int argc, char const *argv[])
 		return 1;
 	}
 
+	auto start = chrono::steady_clock::now();
+
 	for (int i = 0; i < n; i++)
 	{
-
 		// Send message
 		string message = "Hello from client";
 		if (send(sock, message.c_str(), strlen(message.c_str()), 0) < 0)
@@ -57,6 +59,8 @@ int main(int argc, char const *argv[])
 		reply = buffer;
 		// cout << "Reply: " << reply << endl;
 	}
+
+	cout << chrono::duration_cast<chrono::nanoseconds>(chrono::steady_clock::now() - start).count() << endl;
 
 	return 0;
 }
