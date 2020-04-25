@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 {
 	srand(time(NULL));
 
-	int n = 60000000; // Number of operations
+	int n = 50000000; // Number of operations
 	if (argc == 2)
 	{
 		n = atoi(argv[1]);

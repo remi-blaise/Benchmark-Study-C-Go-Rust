@@ -8,7 +8,7 @@ fn main() {
     let n = if args.len() > 1 {
         args[1].parse::<usize>().unwrap()
     } else {
-        100
+        100000
     };
 
     let stream = TcpStream::connect("127.0.0.1:8080").unwrap();
@@ -19,6 +19,6 @@ fn main() {
         (&stream).write_all(b"Hello from client\n").unwrap();
         line = String::new();
         buffered_stream.read_line(&mut line).unwrap();
-        print!("Reply: {}", line);
+        // print!("Reply: {}", line);
     }
 }

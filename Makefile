@@ -11,7 +11,10 @@ deps_install:
 	tar -C $$HOME -xzf go1.14.linux-amd64.tar.gz
 	rm go1.14.linux-amd64.tar.gz
 
-	export GOPATH=$HOME/golocal
+	echo "export PATH=\$$PATH:\$$HOME/go/bin" >> ~/.bashrc
+	echo "export GOPATH=\$$HOME/golocal" >> ~/.bashrc
+	export PATH=$$PATH:$$HOME/go/bin
+	export GOPATH=$$HOME/golocal
 
 	go get github.com/google/btree
 

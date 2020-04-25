@@ -56,7 +56,7 @@ int main(int argc, char const *argv[])
 			return 1;
 		}
 		reply = buffer;
-		cout << "Message received: " << reply << endl;
+		// cout << "Message received: " << reply << endl;
 
 		// Send message
 		string message = "Hello from server";

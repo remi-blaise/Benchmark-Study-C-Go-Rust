@@ -9,7 +9,7 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-	int n = 10000; // Number of requests
+	int n = 100000; // Number of requests
 	if (argc == 2)
 	{
 		n = atoi(argv[1]);
@@ -55,7 +55,7 @@ int main(int argc, char const *argv[])
 			return 1;
 		}
 		reply = buffer;
-		cout << "Reply: " << reply << endl;
+		// cout << "Reply: " << reply << endl;
 	}
 
 	return 0;

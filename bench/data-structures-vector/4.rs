@@ -5,7 +5,7 @@ fn main() {
     let s = if args.len() > 1 {
         args[1].parse::<usize>().unwrap()
     } else {
-        1000000
+        100000000
     };
 
     let mut vec = Vec::with_capacity(s);

@@ -11,8 +11,8 @@ int main(int argc, char const *argv[])
 
 	vector<int> vec;
 
-	int S = 1000000;
-	int n = 1000000;
+	int S = 100000000;
+	int n = 100;
 	if (argc >= 2)
 	{
 		S = atoi(argv[1]);
@@ -32,6 +32,6 @@ int main(int argc, char const *argv[])
 	{
 		vec.erase(vec.begin() + (rand() % vec.size()));
 	}
-	
+
 	return 0;
 }

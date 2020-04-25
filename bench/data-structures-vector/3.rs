@@ -5,12 +5,12 @@ fn main() {
     let mut s = if args.len() > 1 {
         args[1].parse::<usize>().unwrap()
     } else {
-        1000000
+        100000000
     };
     let n = if args.len() > 2 {
         args[2].parse::<u64>().unwrap()
     } else {
-        1000000
+        100
     };
 
     let mut vec = Vec::with_capacity(s);

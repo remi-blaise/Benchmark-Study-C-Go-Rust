@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math/rand"
 	"os"
 	"strconv"
@@ -11,8 +10,8 @@ import (
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
-	var S = 1000000
-	var n = 1000000
+	var S = 100000000
+	var n = 10000000
 	var args = os.Args[1:]
 	if len(args) >= 1 {
 		S, _ = strconv.Atoi(args[0])
@@ -27,7 +26,10 @@ func main() {
 		arr[i] = 42
 	}
 
+	var sum = 0;
+
 	for i := 0; i < n; i++ {
-		fmt.Println(arr[rand.Int()%S])
+		sum += arr[rand.Int()%S]
+		S -= 1
 	}
 }

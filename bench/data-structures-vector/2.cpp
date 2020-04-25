@@ -11,8 +11,8 @@ int main(int argc, char const *argv[])
 
 	vector<int> vec;
 
-	int S = 1000000;
-	int n = 1000000;
+	int S = 100000000;
+	int n = 10000000;
 	if (argc >= 2)
 	{
 		S = atoi(argv[1]);
@@ -28,10 +28,13 @@ int main(int argc, char const *argv[])
 		vec.push_back(42);
 	}
 
+	int sum = 0;
+
 	for (int i = 0; i < n; i++)
 	{
-		cout << vec.at(rand() % S) << "\n";
+		sum += vec.at(rand() % S);
+		S -= 1;
 	}
-	
+
 	return 0;
 }

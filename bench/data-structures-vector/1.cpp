@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
 {
 	vector<int> vec;
 
-	int n = 1000000;
+	int n = 100000000;
 	if (argc == 2)
 	{
 		n = atoi(argv[1]);

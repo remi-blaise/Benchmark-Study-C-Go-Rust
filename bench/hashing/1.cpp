@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
 
     unordered_map<int, int> map;
 
-    int n = 1000000;
+    int n = 10000000;
     if (argc == 2)
     {
         n = atoi(argv[1]);

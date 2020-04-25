@@ -21,7 +21,7 @@ struct Data
 
 int main(int argc, char const *argv[])
 {
-    int n = 10000;
+    int n = 100000;
     if (argc == 2)
     {
         n = atoi(argv[1]);

@@ -11,7 +11,7 @@ import (
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
-	var n = 15000000 // Number of operations
+	var n = 50000000 // Number of operations
 	var args = os.Args[1:]
 	if len(args) >= 1 {
 		n, _ = strconv.Atoi(args[0])

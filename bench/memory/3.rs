@@ -5,7 +5,7 @@ fn main() {
     let s: usize = if args.len() > 1 {
         args[1].parse().unwrap()
     } else {
-        1000_000
+        1000000
     } / 4;
     let n: usize = if args.len() > 2 {
         args[2].parse().unwrap()

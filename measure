@@ -23,6 +23,11 @@ for file in `ls bin/*/*/*`; do
     # Measure size
 
     size=`stat --printf="%s" ${TMP_EXEC}`
+    if [[ ${file} == *"hello-world"* ]]; then
+        script=`echo ${file} | sed "s/bin\///" | sed "s/rust\///" | sed "s/go\///" | sed "s/cpp\///"`
+        echo ${script},${size},,,,,, >> ${FILE}
+        continue
+    fi
 
     # Start monitoring
 
@@ -32,7 +37,7 @@ for file in `ls bin/*/*/*`; do
     # Execute
 
     start=`date +%s%N`
-    critical_duration=`${TMP_EXEC}`
+    critical_duration=`${TMP_EXEC} | tail -1 | tr -d '\n'`
     end=`date +%s%N`
 
     # Stop monitoring

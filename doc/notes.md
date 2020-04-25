@@ -14,8 +14,14 @@ to retrieve reserved memory, shared memory, %cpu and %ram
 -------------------------
 
 TODO:
-[ ] Make a build-all command
+[x] Make a build-all command
 [x] Measure bin sizes and output in a csv
-[ ] Measure execution time and output in a csv
-
+[x] Measure execution time and output in a csv
+[x] Measure monitoring data with top
+[x] Configure all scripts to have a fair duration
+[ ] Measure critical time
 [ ] Make a script that install, build all and execute
+
+Optional:
+[ ] Coder 4.cpp
+[ ] Compiler sans optimisation hello-world and memory et faire les mesures

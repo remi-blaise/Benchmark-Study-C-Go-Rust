@@ -12,5 +12,5 @@ fn main() {
         n -= 1;
     }
 
-    println!("{}", n);
+    print!("{}", n);
 }

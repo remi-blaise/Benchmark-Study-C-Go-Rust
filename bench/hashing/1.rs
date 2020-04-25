@@ -7,7 +7,7 @@ fn main() {
     let n = if args.len() > 1 {
         args[1].parse::<usize>().unwrap()
     } else {
-        1000000
+        10000000
     };
 
     let mut map = HashMap::with_hasher(BuildHasherDefault::<hashers::fx_hash::FxHasher>::default());

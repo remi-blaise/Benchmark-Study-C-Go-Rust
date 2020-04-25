@@ -13,7 +13,7 @@ fn main() {
     let n: usize = if args.len() > 1 {
         args[1].parse().unwrap()
     } else {
-        10000
+        100000
     };
 
     for _ in 0..n {

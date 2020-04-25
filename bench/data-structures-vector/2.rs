@@ -2,15 +2,15 @@ use std::env;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
-    let s = if args.len() > 1 {
+    let mut s = if args.len() > 1 {
         args[1].parse::<usize>().unwrap()
     } else {
-        1000000
+        100000000
     };
     let n = if args.len() > 2 {
         args[2].parse::<u64>().unwrap()
     } else {
-        1000000
+        10000000
     };
 
     let mut vec = Vec::with_capacity(s);
@@ -19,7 +19,11 @@ fn main() {
         vec.push(42);
     }
 
+    let mut _sum = 0;
+
     for _ in 0..n {
-        println!("{}", vec[rand::random::<usize>() % s]);
+        _sum += vec[rand::random::<usize>() % s];
+
+        s -= 1;
     }
 }

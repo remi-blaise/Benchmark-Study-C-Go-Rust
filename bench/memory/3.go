@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	var S = 1_000_000 // 1 MB
+	var S = 1000000 // 1 MB
 	var N = 1000
 	var args = os.Args[1:]
 	if len(args) >= 1 {

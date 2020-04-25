@@ -16,7 +16,7 @@ type Data struct {
 }
 
 func main() {
-	var n = 10000
+	var n = 100000
 	var args = os.Args[1:]
 	if len(args) >= 1 {
 		n, _ = strconv.Atoi(args[0])

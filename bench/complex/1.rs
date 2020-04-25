@@ -6,7 +6,7 @@ fn main() {
     let n = if args.len() > 1 {
         args[1].parse::<usize>().unwrap()
     } else {
-        15000000
+        50000000
     };
 
     for _ in 0..n {

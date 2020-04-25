@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
 {
 	srand(time(NULL));
 
-	int S = 1000000;
+	int S = 100000000;
 	if (argc == 2)
 	{
 		S = atoi(argv[1]);

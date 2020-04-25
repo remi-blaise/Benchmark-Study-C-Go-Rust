@@ -10,8 +10,8 @@ import (
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
-	var S = 1000000
-	var n = 1000000
+	var S = 100000000
+	var n = 100
 	var args = os.Args[1:]
 	if len(args) >= 1 {
 		S, _ = strconv.Atoi(args[0])

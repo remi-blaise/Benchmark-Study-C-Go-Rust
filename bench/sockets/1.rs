@@ -9,7 +9,7 @@ fn main() {
     let mut line = String::new();
 
     while buffered_stream.read_line(&mut line).unwrap() != 0 {
-        print!("Message received: {}", line);
+        // print!("Message received: {}", line);
         (&stream).write_all(b"Hello from server\n").unwrap();
         line = String::new();
     }
