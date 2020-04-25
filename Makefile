@@ -31,3 +31,7 @@ listall:
 .PHONY: clean
 clean:
 	rm -rf $(bindir)*
+
+.PHONY: exec
+exec:
+	./measure

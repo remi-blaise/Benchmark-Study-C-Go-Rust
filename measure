@@ -32,7 +32,7 @@ for file in `ls bin/*/*/*`; do
     # Start monitoring
 
     top -b -d 0.001 > ${TMP_FILE} &
-    sleep .25
+    sleep 1
 
     # Execute
 
@@ -42,7 +42,7 @@ for file in `ls bin/*/*/*`; do
 
     # Stop monitoring
 
-    sleep .25
+    sleep 1
     killall top
 
     # Compute
@@ -52,7 +52,7 @@ for file in `ls bin/*/*/*`; do
     shared_memory=`cat ${TMP_FILE} | grep ${TMP_EXEC_NAME} | perl -pe 's/^\s+//' | tr -s " " | cut -f 7 -d " " | sort -n | tail -1`
     cpu_percent=`cat ${TMP_FILE} | grep ${TMP_EXEC_NAME} | perl -pe 's/^\s+//' | tr -s " " | cut -f 9 -d " " | sort -n | tail -1`
     ram_percent=`cat ${TMP_FILE} | grep ${TMP_EXEC_NAME} | perl -pe 's/^\s+//' | tr -s " " | cut -f 10 -d " " | sort -n | tail -1`
-    script=`echo ${file} | sed "s/bin\///" | sed "s/rust\///" | sed "s/go\///" | sed "s/cpp\///"`
+    script=`echo ${file} | sed "s/bin\///"`
 
     # Save
 
@@ -75,7 +75,7 @@ for lang in rust go cpp; do
 
     start=`date +%s%N`
     bin/sockets/${lang}/1 > /dev/null &
-    critical_duration=`bin/sockets/${lang}/2`
+    critical_duration=`bin/sockets/${lang}/2 | tail -1 | tr -d '\n'`
     end=`date +%s%N`
 
     # Stop monitoring
@@ -86,7 +86,7 @@ for lang in rust go cpp; do
     # Compute
 
     total_duration=$((end - start))
-    top_measures=`cat ${TMP_FILE} | grep ${TMP_EXEC_NAME} | perl -pe 's/^\s+//' | tr -s " "`
+    top_measures=`cat ${TMP_FILE} | grep " 2$" | perl -pe 's/^\s+//' | tr -s " "`
     reserved_memory=`echo ${top_measures} | cut -f 6 -d " "`
     shared_memory=`echo ${top_measures} | cut -f 7 -d " "`
     cpu_percent=`echo ${top_measures} | cut -f 9 -d " "`
