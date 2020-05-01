@@ -4,8 +4,16 @@ Run `make deps_install` to install Rust and Go
 
 # Build
 
-For each benchmark:
+To build all the benchmarks:
 
 ```bash
-make test=[benchmark name] build
+make build
+```
+
+# Evaluate
+
+To measure the performances:
+
+```bash
+make exec
 ```
