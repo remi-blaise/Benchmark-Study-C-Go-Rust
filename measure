@@ -24,7 +24,7 @@ for file in `ls bin/*/*/*`; do
 
     size=`stat --printf="%s" ${TMP_EXEC}`
     if [[ ${file} == *"hello-world"* ]]; then
-        script=`echo ${file} | sed "s/bin\///" | sed "s/rust\///" | sed "s/go\///" | sed "s/cpp\///"`
+        script=`echo ${file}`
         echo ${script},${size},,,,,, >> ${FILE}
         continue
     fi
